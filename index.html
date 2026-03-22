@@ -1,13 +1,17 @@
 <!DOCTYPE html>
-<html lang="RU">
+<html lang="ru">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Обзор займов без отказа | Современный подход</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+    <title>Ирина Корункова | Stilouette — Стилист и эксперт по архетипам</title>
+    <meta name="description" content="Персональный стилист онлайн, эксперт по архетипам. Помогаю найти свой стиль через глубинные концепции и архетипы. Консультации в Германии и онлайн по всему миру.">
+    
+    <!-- Google Fonts & Icons -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,300;14..32,400;14..32,500;14..32,600;14..32,700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,300;14..32,400;14..32,500;14..32,600;14..32,700&family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    
     <style>
         * {
             margin: 0;
@@ -17,719 +21,445 @@
 
         body {
             font-family: 'Inter', sans-serif;
-            background: #f8fafc;
-            color: #0f172a;
-            line-height: 1.5;
+            color: #1e2a2a;
+            background-color: #ffffff;
+            line-height: 1.55;
+            scroll-behavior: smooth;
         }
 
-        :root {
-            --primary: #f97316;
-            --primary-dark: #ea580c;
-            --primary-light: #ffedd5;
-            --primary-gradient: linear-gradient(135deg, #f97316 0%, #fdba74 100%);
-            --gray-50: #f9fafb;
-            --gray-100: #f1f5f9;
-            --gray-200: #e2e8f0;
-            --gray-300: #cbd5e1;
-            --gray-600: #475569;
-            --gray-700: #334155;
-            --gray-800: #1e293b;
-            --gray-900: #0f172a;
-            --shadow-sm: 0 1px 2px 0 rgb(0 0 0 / 0.05);
-            --shadow-md: 0 4px 6px -1px rgb(0 0 0 / 0.1), 0 2px 4px -2px rgb(0 0 0 / 0.1);
-            --shadow-lg: 0 10px 15px -3px rgb(0 0 0 / 0.1), 0 4px 6px -4px rgb(0 0 0 / 0.1);
-            --shadow-xl: 0 20px 25px -5px rgb(0 0 0 / 0.1), 0 8px 10px -6px rgb(0 0 0 / 0.1);
-            --radius-xl: 1rem;
-            --radius-2xl: 1.5rem;
-            --radius-3xl: 2rem;
+        /* Typography */
+        h1, h2, h3, .logo, .nav-links a, .btn {
+            font-family: 'Cormorant Garamond', serif;
         }
 
-        .l-container {
+        h1 {
+            font-size: 3.8rem;
+            font-weight: 600;
+            letter-spacing: -0.02em;
+            line-height: 1.2;
+            color: #1e2a2a;
+            margin-bottom: 1.5rem;
+        }
+
+        h2 {
+            font-size: 2.4rem;
+            font-weight: 500;
+            letter-spacing: -0.01em;
+            margin-bottom: 2rem;
+            border-left: 4px solid #7fbfbf;
+            padding-left: 1rem;
+        }
+
+        h3 {
+            font-size: 1.4rem;
+            font-weight: 600;
+            margin: 1.5rem 0 0.75rem;
+        }
+
+        p {
+            margin-bottom: 1.4rem;
+            font-weight: 400;
+            color: #2c3e3e;
+        }
+
+        a {
+            color: #036666;
+            text-decoration: none;
+            transition: all 0.25s ease;
+            border-bottom: 1px solid transparent;
+        }
+
+        a:hover {
+            color: #7fbfbf;
+            border-bottom-color: #7fbfbf;
+        }
+
+        .container {
             max-width: 1280px;
             margin: 0 auto;
-            padding: 0 24px;
+            padding: 0 2rem;
         }
 
-        /* header */
-        #header {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            padding: 20px 0;
-            border-bottom: 1px solid var(--gray-200);
-            margin-bottom: 32px;
-            flex-wrap: wrap;
-            gap: 16px;
-        }
-
-        .l-logo {
-            font-weight: 800;
-            font-size: 1.8rem;
-            background: var(--primary-gradient);
-            background-clip: text;
-            -webkit-background-clip: text;
-            color: transparent;
-            letter-spacing: -0.02em;
-        }
-        .l-logo::before {
-            content: "💸 КредитГид";
-        }
-
-        .visit-counter {
+        /* Header & Navigation */
+        .site-header {
+            padding: 1.5rem 0;
+            border-bottom: 1px solid #eef2f0;
             background: white;
-            padding: 8px 18px;
-            border-radius: 60px;
-            box-shadow: var(--shadow-sm);
-            border: 1px solid var(--gray-200);
-            text-align: center;
-        }
-        .visit-counter-value {
-            font-size: 1.5rem;
-            font-weight: 800;
-            color: var(--primary);
-            line-height: 1.2;
-        }
-        .visit-counter-today {
-            font-size: 0.75rem;
-            color: var(--gray-600);
-        }
-
-        .hamburger {
-            width: 28px;
-            height: 19px;
-            cursor: pointer;
-            color: var(--gray-700);
-            transition: color 0.2s;
-        }
-        .hamburger:hover {
-            color: var(--primary);
-        }
-
-        .menu {
-            position: fixed;
+            position: sticky;
             top: 0;
-            right: -320px;
-            width: 300px;
-            height: 100%;
-            background: white;
-            box-shadow: var(--shadow-xl);
-            z-index: 1000;
-            transition: right 0.3s ease;
-            padding: 24px;
-            border-left: 1px solid var(--gray-200);
-        }
-        .menu.open {
-            right: 0;
-        }
-        .menu-close {
-            position: absolute;
-            top: 20px;
-            right: 20px;
-            width: 28px;
-            height: 28px;
-            cursor: pointer;
-            background: var(--gray-100);
-            border-radius: 50%;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-        }
-        .menu-close::before, .menu-close::after {
-            content: '';
-            position: absolute;
-            width: 16px;
-            height: 2px;
-            background: var(--gray-600);
-            transform: rotate(45deg);
-        }
-        .menu-close::after {
-            transform: rotate(-45deg);
-        }
-        .menu-logo {
-            font-size: 1.5rem;
-            font-weight: 800;
-            background: var(--primary-gradient);
-            background-clip: text;
-            -webkit-background-clip: text;
-            color: transparent;
-            margin-bottom: 40px;
-        }
-        .menu-items {
-            list-style: none;
-        }
-        .menu-item {
-            display: block;
-            padding: 12px 0;
-            font-weight: 500;
-            color: var(--gray-800);
-            text-decoration: none;
-            border-bottom: 1px solid var(--gray-100);
-            transition: color 0.2s;
-        }
-        .menu-item:hover {
-            color: var(--primary);
+            z-index: 100;
+            backdrop-filter: blur(8px);
+            background: rgba(255,255,255,0.96);
         }
 
-        /* titles */
-        #page-titles {
-            text-align: center;
-            margin: 40px 0 32px;
-        }
-        h1 {
-            font-size: 2.5rem;
-            font-weight: 800;
-            background: linear-gradient(135deg, #1e293b 0%, #f97316 80%);
-            background-clip: text;
-            -webkit-background-clip: text;
-            color: transparent;
-            letter-spacing: -0.02em;
-            margin-bottom: 12px;
-        }
-        #page-titles p {
-            font-size: 1rem;
-            color: var(--gray-600);
-            background: var(--primary-light);
-            display: inline-block;
-            padding: 8px 24px;
-            border-radius: 60px;
-            font-weight: 500;
-        }
-
-        /* spinner */
-        .spinner {
-            text-align: center;
-            padding: 60px 20px;
-            display: none;
-        }
-        .spinner-text {
-            font-size: 1rem;
-            color: var(--gray-600);
-            margin-bottom: 16px;
-        }
-        .spinner-icon {
-            display: flex;
-            justify-content: center;
-            gap: 8px;
-        }
-        .spinner-icon-item {
-            width: 10px;
-            height: 10px;
-            background: var(--primary);
-            border-radius: 50%;
-            animation: bounce 0.6s infinite alternate;
-        }
-        .spinner-icon-item:nth-child(2) { animation-delay: 0.2s; }
-        .spinner-icon-item:nth-child(3) { animation-delay: 0.4s; }
-        @keyframes bounce {
-            0% { transform: translateY(0); opacity: 0.4; }
-            100% { transform: translateY(-10px); opacity: 1; }
-        }
-
-        /* sections */
-        .l-section {
-            margin-bottom: 56px;
-        }
-        .block-headlines {
-            margin-bottom: 28px;
-        }
-        .block-headlines h2 {
-            font-size: 1.8rem;
-            font-weight: 700;
-            position: relative;
-            display: inline-block;
-            padding-bottom: 8px;
-        }
-        .block-headlines h2::after {
-            content: '';
-            position: absolute;
-            bottom: 0;
-            left: 0;
-            width: 60%;
-            height: 4px;
-            background: var(--primary-gradient);
-            border-radius: 4px;
-        }
-
-        .h-row {
-            display: grid;
-            grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
-            gap: 28px;
-        }
-        .h-row-item {
-            transition: transform 0.2s, box-shadow 0.2s;
-        }
-        .h-row-item:hover {
-            transform: translateY(-4px);
-        }
-
-        /* offer card */
-        .offer-link {
-            text-decoration: none;
-            display: block;
-        }
-        .h-wa2 {
-            background: white;
-            border-radius: var(--radius-2xl);
-            box-shadow: var(--shadow-md);
-            transition: box-shadow 0.2s;
-            overflow: hidden;
-            border: 1px solid var(--gray-100);
-        }
-        .h-wa2:hover {
-            box-shadow: var(--shadow-xl);
-        }
-        .h-v-label {
-            background: var(--primary-gradient);
-            padding: 6px 16px;
-            display: inline-block;
-            border-bottom-right-radius: 20px;
-        }
-        .h-v-label-item p {
-            color: white;
-            font-weight: 600;
-            font-size: 0.75rem;
-            text-transform: uppercase;
-            letter-spacing: 0.5px;
-        }
-        .owner-label {
-            padding: 12px 16px 0 16px;
-            font-size: 0.7rem;
-            color: var(--gray-500);
-        }
-        .owner-label-text {
-            color: var(--gray-500);
-        }
-        .owner-label-url {
-            font-weight: 600;
-            color: var(--gray-700);
-        }
-        .h-wa2-wrapper {
-            padding: 16px;
-        }
-        .h-wa2-items {
-            list-style: none;
-            display: flex;
-            flex-direction: column;
-            gap: 16px;
-        }
-        .h-wa2-logo-wrapper {
-            display: flex;
-            justify-content: center;
-        }
-        .h-wa2-logo img {
-            max-height: 56px;
-            object-fit: contain;
-        }
-        .h-wa2-percent, .h-wa2-term, .h-wa2-amount {
-            font-size: 0.85rem;
-            font-weight: 500;
-            color: var(--gray-600);
-        }
-        .h-wa2-percent span, .h-wa2-term span, .h-wa2-amount span {
-            font-weight: 800;
-            color: var(--gray-900);
-            font-size: 1.1rem;
-        }
-        .h-wa2-approve {
-            background: var(--primary-light);
-            border-radius: 40px;
-            padding: 6px 12px;
-            text-align: center;
-        }
-        .h-wa2-approve-title {
-            font-size: 0.7rem;
-            color: var(--primary-dark);
-        }
-        .h-wa2-approve-value {
-            font-weight: 800;
-            font-size: 1.2rem;
-            color: var(--primary);
-        }
-        .h-wa2-button-wrapper {
-            margin-top: 8px;
-        }
-        .h-wa2-button {
-            background: var(--primary-gradient);
-            color: white;
-            font-weight: 700;
-            text-align: center;
-            padding: 12px;
-            border-radius: 60px;
-            transition: transform 0.1s, opacity 0.2s;
-            cursor: pointer;
-            font-size: 0.95rem;
-        }
-        .h-wa2-button:hover {
-            opacity: 0.9;
-            transform: scale(0.98);
-        }
-        .is-d-none-mobile {
-            display: flex;
-        }
-        .h-wa2-groups-wrapper {
+        .header-inner {
             display: flex;
             justify-content: space-between;
-            gap: 12px;
+            align-items: center;
             flex-wrap: wrap;
         }
-        .h-wa2-items-group1, .h-wa2-items-group2 {
-            display: flex;
-            gap: 12px;
-            flex: 1;
-        }
-        .h-wa2-items-group-item {
-            background: var(--gray-50);
-            border-radius: 40px;
-            padding: 6px 12px;
-            text-align: center;
-            flex: 1;
+
+        .logo a {
+            font-size: 1.8rem;
+            font-weight: 600;
+            letter-spacing: -0.5px;
+            color: #1e2a2a;
+            border-bottom: none;
+            text-decoration: none;
+            font-family: 'Cormorant Garamond', serif;
         }
 
-        /* info accordion */
-        .info {
-            background: white;
-            border-radius: var(--radius-2xl);
-            border: 1px solid var(--gray-200);
-            overflow: hidden;
-            margin-bottom: 20px;
-        }
-        .info-title {
-            width: 100%;
-            background: white;
-            border: none;
-            padding: 20px 24px;
-            font-size: 1.2rem;
+        .logo span {
+            color: #7fbfbf;
             font-weight: 700;
-            text-align: left;
+        }
+
+        .nav-links {
             display: flex;
-            justify-content: space-between;
-            align-items: center;
-            cursor: pointer;
-            color: var(--gray-800);
-            transition: background 0.2s;
+            gap: 2rem;
+            list-style: none;
         }
-        .info-title:hover {
-            background: var(--gray-50);
-        }
-        .info-title-arrow svg {
-            width: 13px;
-            transition: transform 0.2s;
-        }
-        .info.active .info-title-arrow svg {
-            transform: rotate(180deg);
-        }
-        .info-items {
-            max-height: 0;
-            overflow: hidden;
-            transition: max-height 0.4s ease-out;
-            padding: 0 24px;
-        }
-        .info.active .info-items {
-            max-height: 800px;
-            padding: 0 24px 24px 24px;
-        }
-        .info-item {
-            padding: 12px 0;
-            border-bottom: 1px solid var(--gray-100);
-            color: var(--gray-700);
-            line-height: 1.5;
-        }
-        .info-item:last-child {
+
+        .nav-links a {
+            font-family: 'Inter', sans-serif;
+            font-weight: 500;
+            font-size: 0.95rem;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            color: #2c3e3e;
             border-bottom: none;
         }
 
-        /* partners */
-        .partners {
-            background: white;
-            border-radius: var(--radius-2xl);
-            padding: 28px;
-            border: 1px solid var(--gray-200);
-        }
-        .partners-title {
-            font-size: 1.4rem;
-            font-weight: 700;
-            margin-bottom: 20px;
-        }
-        .partners-items {
-            display: grid;
-            grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
-            gap: 20px;
-        }
-        .partners-item {
-            font-size: 0.8rem;
-            color: var(--gray-600);
-            background: var(--gray-50);
-            padding: 14px;
-            border-radius: 20px;
-            border-left: 3px solid var(--primary);
-        }
-        .partners-item__licenseNumber {
-            font-weight: 700;
-            color: var(--gray-800);
+        .nav-links a:hover, .nav-links .active a {
+            color: #036666;
         }
 
-        /* footer */
-        #footer {
-            margin: 48px 0 32px;
-            padding: 32px 0;
-            border-top: 1px solid var(--gray-200);
-            text-align: center;
-        }
-        .footer-message {
-            font-size: 0.7rem;
-            color: var(--gray-500);
-            max-width: 800px;
-            margin: 0 auto 24px;
-        }
-
-        /* scroll up */
-        .scroll-up {
-            position: fixed;
-            bottom: 30px;
-            right: 30px;
-            background: var(--primary);
-            color: white;
-            width: 48px;
-            height: 48px;
-            border-radius: 60px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            cursor: pointer;
-            box-shadow: var(--shadow-lg);
-            transition: 0.2s;
-            z-index: 99;
-        }
-        .scroll-up-text {
-            font-size: 0;
-        }
-        .scroll-up::after {
-            content: "↑";
-            font-size: 24px;
-            font-weight: bold;
-        }
-        .scroll-up:hover {
-            background: var(--primary-dark);
-            transform: translateY(-3px);
-        }
-
-        /* geo window */
-        .geo-window-wrapper {
-            position: fixed;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background: rgba(0,0,0,0.5);
-            backdrop-filter: blur(3px);
+        /* Mobile menu */
+        .menu-toggle {
             display: none;
-            align-items: center;
-            justify-content: center;
-            z-index: 1100;
-        }
-        .geo-window {
-            background: white;
-            border-radius: 32px;
-            max-width: 400px;
-            width: 90%;
-            padding: 28px;
-            position: relative;
-        }
-        .geo-close {
-            position: absolute;
-            top: 16px;
-            right: 20px;
+            font-size: 1.8rem;
             cursor: pointer;
-            font-size: 24px;
-        }
-        .geo-city-label {
-            font-weight: 600;
-            margin-bottom: 8px;
-        }
-        .geo-city-name {
-            font-size: 1.3rem;
-            font-weight: 800;
-            margin-bottom: 20px;
-        }
-        .geo-form {
-            display: flex;
-            flex-direction: column;
-            gap: 12px;
-            margin-top: 16px;
-        }
-        .geo-input {
-            padding: 12px;
-            border: 1px solid var(--gray-300);
-            border-radius: 60px;
-            font-family: inherit;
-        }
-        .geo-button {
-            background: var(--primary);
+            background: none;
             border: none;
-            padding: 12px;
-            border-radius: 60px;
-            color: white;
-            font-weight: 700;
-            cursor: pointer;
         }
 
-        @media (max-width: 768px) {
-            .l-container {
-                padding: 0 16px;
+        /* Hero Section */
+        .hero {
+            margin: 3rem 0 4rem;
+            border-radius: 28px;
+            overflow: hidden;
+            box-shadow: 0 20px 35px -12px rgba(0,0,0,0.08);
+        }
+
+        .hero-img {
+            width: 100%;
+            height: auto;
+            display: block;
+            object-fit: cover;
+            max-height: 480px;
+            width: 100%;
+        }
+
+        /* Main Content */
+        .about-content {
+            display: grid;
+            grid-template-columns: 1fr 0.9fr;
+            gap: 3rem;
+            margin: 4rem 0 5rem;
+        }
+
+        .bio-text {
+            font-size: 1.06rem;
+        }
+
+        .bio-highlight {
+            background: #f6fbf9;
+            padding: 2rem;
+            border-radius: 24px;
+            align-self: start;
+            border: 1px solid #e0ebe7;
+        }
+
+        .stats-list {
+            list-style: none;
+            margin-top: 1.5rem;
+        }
+
+        .stats-list li {
+            margin-bottom: 1rem;
+            display: flex;
+            align-items: center;
+            gap: 0.75rem;
+            font-weight: 500;
+        }
+
+        .stats-list i {
+            color: #7fbfbf;
+            font-size: 1.2rem;
+            width: 1.6rem;
+        }
+
+        .btn {
+            display: inline-block;
+            background: #036666;
+            color: white;
+            padding: 0.9rem 2rem;
+            border-radius: 40px;
+            font-weight: 600;
+            font-family: 'Inter', sans-serif;
+            font-size: 0.9rem;
+            letter-spacing: 0.5px;
+            margin-top: 0.5rem;
+            border: none;
+            transition: 0.2s;
+            text-decoration: none;
+        }
+
+        .btn:hover {
+            background: #7fbfbf;
+            color: #1e2a2a;
+            transform: translateY(-2px);
+            border-bottom: none;
+        }
+
+        .services-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+            gap: 2rem;
+            margin: 3rem 0;
+        }
+
+        .service-card {
+            background: #ffffff;
+            border: 1px solid #e9f0ed;
+            border-radius: 24px;
+            padding: 1.8rem;
+            transition: all 0.2s;
+        }
+
+        .service-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 20px 30px -15px rgba(0,0,0,0.05);
+            border-color: #cde3dc;
+        }
+
+        .service-card i {
+            font-size: 2rem;
+            color: #7fbfbf;
+            margin-bottom: 1rem;
+        }
+
+        .service-card h3 {
+            margin-top: 0;
+        }
+
+        /* Footer */
+        .footer {
+            background: #f8faf8;
+            padding: 3rem 0 2rem;
+            margin-top: 5rem;
+            border-top: 1px solid #e0eae5;
+        }
+
+        .footer-content {
+            display: flex;
+            justify-content: space-between;
+            flex-wrap: wrap;
+            gap: 2rem;
+            align-items: center;
+        }
+
+        .footer-links {
+            display: flex;
+            gap: 2rem;
+            flex-wrap: wrap;
+        }
+
+        .social-icons a {
+            font-size: 1.5rem;
+            margin-left: 1rem;
+            color: #3e5a5a;
+            border-bottom: none;
+        }
+
+        .social-icons a:hover {
+            color: #036666;
+        }
+
+        @media (max-width: 880px) {
+            .about-content {
+                grid-template-columns: 1fr;
+                gap: 2rem;
             }
             h1 {
-                font-size: 1.8rem;
+                font-size: 2.8rem;
             }
-            .h-row {
-                grid-template-columns: 1fr;
-            }
-            .is-d-none-mobile {
-                display: flex !important;
-            }
-            .h-wa2-percent-wrapper, .h-wa2-term-wrapper, .h-wa2-approve-wrapper, .h-wa2-amount-wrapper {
+            .nav-links {
                 display: none;
+                width: 100%;
+                flex-direction: column;
+                text-align: center;
+                padding: 1.5rem 0;
+                gap: 1rem;
             }
+            .nav-links.show {
+                display: flex;
+            }
+            .menu-toggle {
+                display: block;
+            }
+            .header-inner {
+                position: relative;
+            }
+            .container {
+                padding: 0 1.5rem;
+            }
+        }
+        
+        @media (max-width: 560px) {
+            h1 { font-size: 2.2rem; }
+            h2 { font-size: 1.8rem; }
+            .btn { padding: 0.7rem 1.5rem; }
+        }
+        
+        .feature-img {
+            width: 100%;
+            border-radius: 28px;
+            margin-bottom: 1rem;
         }
     </style>
 </head>
 <body>
-<div class="l-container">
-    <div id="header">
-        <div class="l-logo"></div>
-        <div class="l-geo"></div>
-        <div class="l-counter">
-            <div class="visit-counter">
-                <div class="visit-counter-value"></div>
-                <div class="visit-counter-today">одобрено заявок на 22.03.2026</div>
-            </div>
+
+<header class="site-header">
+    <div class="container header-inner">
+        <div class="logo">
+            <a href="/">Stilouette<span>.</span></a>
         </div>
-        <div class="l-menu">
-            <svg class="hamburger" viewBox="0 0 28 19" fill="none" onclick="openMenu()">
-                <path d="M27.1321 18.1226H0.0536232V15.1139H27.1321V18.1226ZM27.1321 10.6008H7.01171V7.59211H27.1321V10.6008ZM27.1321 0.0703125V3.07903H0.0536232V0.0703125H27.1321Z" fill="currentColor"/>
-            </svg>
-            <div class="menu" id="sideMenu">
-                <div class="menu-close cancel-icon" onclick="closeMenu()"></div>
-                <div class="menu-logo"></div>
-                <ul class="menu-items">
-                    <li class="menu-item-wrapper"><a href="#block-2" class="menu-item" onclick="closeMenu()">Акции и скидки</a></li>
-                    <li class="menu-item-wrapper"><a href="#block-3" class="menu-item" onclick="closeMenu()">Займы под 0 %</a></li>
+        <button class="menu-toggle" id="mobileMenuBtn" aria-label="Menu">
+            <i class="fas fa-bars"></i>
+        </button>
+        <ul class="nav-links" id="navMenu">
+            <li><a href="/">Главная</a></li>
+            <li class="active"><a href="/o-sebe/">Обо мне</a></li>
+            <li><a href="/uslugi-2/">Услуги</a></li>
+            <li><a href="/blog/">Блог</a></li>
+            <li><a href="/kontakt/">Контакты</a></li>
+        </ul>
+    </div>
+</header>
+
+<main>
+    <div class="container">
+        <!-- Hero Image (featured) -->
+        <div class="hero">
+            <img class="hero-img" src="https://i0.wp.com/stilouette.com/wp-content/uploads/2023/11/feature-title-about-me-2.png?fit=1800%2C800&ssl=1" alt="Ирина Корункова, стилист и эксперт по архетипам">
+        </div>
+
+        <!-- Main About Section with modern two-column layout -->
+        <div class="about-content">
+            <div class="bio-text">
+                <h1>Ирина Корункова</h1>
+                <p style="font-size:1.2rem; font-weight: 400; color: #2c6e6e;">Персональный стилист, эксперт по архетипам, автор книги «Примерочная архетипов»</p>
+                <p>Здравствуйте! Я живу в Германии, во Франкфурте-на-Майне, и с 2011 года помогаю людям по всему миру обрести гармонию с собой через стиль. Моя миссия — не просто подобрать одежду, но создать визуальный язык, который звучит в унисон с вашей личностью, историей и архетипами.</p>
+                <p>Путь к профессии стилиста был нелинейным: филологический факультет МГУ, экономика и психология в университете Мангейма, и, наконец, обучение в Гамбурге на имиджмейкера. Я глубоко убеждена: любой опыт — это фундамент. Знание мировой литературы, психологии и маркетинга помогает мне создавать глубинные стилевые концепции, которые работают не только для частных клиентов, но и для брендов и экспертов.</p>
+                <p>С 2015 года архетипы стали моим главным инструментом. Я помогаю раскрыть ваш внутренний «сценарий» через внешние образы. В 2020 году я начала обучать стилистов и коучей системе архетипов, а также консультировать экспертов помогающих профессий по визуальной упаковке их личного бренда. Летом 2025 года в издательстве «Скифия» вышла моя книга <strong>«Примерочная архетипов: от Бунтарки до Правительницы»</strong> — практическое руководство по стилю и визуалу.</p>
+                <p>Мои клиенты живут в 35 странах на 5 континентах. Это люди от 16 до 65 лет: предприниматели, творческие специалисты, молодые мамы, студенты — все, кто готов сделать свой мир ярким и осознанным. Я учу не просто следовать трендам, а развивать стильную интуицию, чтобы вы могли быть лучшей версией себя каждый день.</p>
+                <a href="/uslugi-2/" class="btn">Выбрать консультацию →</a>
+            </div>
+            <div class="bio-highlight">
+                <h3 style="margin-top:0;">Цифры и факты</h3>
+                <ul class="stats-list">
+                    <li><i class="fas fa-globe-europe"></i> Живу в Германии, работаю онлайн</li>
+                    <li><i class="fas fa-chalkboard-user"></i> 14+ лет в стиле и архетипах</li>
+                    <li><i class="fas fa-users"></i> Клиенты из 35 стран мира</li>
+                    <li><i class="fas fa-book-open"></i> Автор книги «Примерочная архетипов» (2025)</li>
+                    <li><i class="fas fa-palette"></i> Преподаватель архетипов для стилистов</li>
+                    <li><i class="fas fa-map-pin"></i> Консультации в Германии, Москве, Париже и онлайн</li>
                 </ul>
-            </div>
-        </div>
-    </div>
-
-    <div id="page-titles">
-        <h1>Вам подобраны следующие займы</h1>
-        <p>ГАРАНТИРУЕМ ПОЛУЧЕНИЕ ЗАЙМА ПРИ ЗАПОЛНЕНИИ ДВУХ И БОЛЕЕ ЗАЯВОК</p>
-    </div>
-
-    <div class="spinner" id="spinner">
-        <div class="spinner-container">
-            <div class="spinner-text">Идет подбор предложений</div>
-            <div class="spinner-icon">
-                <div class="spinner-icon-inner">
-                    <div class="spinner-icon-item"></div>
-                    <div class="spinner-icon-item is-active"></div>
-                    <div class="spinner-icon-item"></div>
-                    <div class="spinner-icon-item"></div>
+                <div style="margin-top: 1.8rem;">
+                    <i class="fas fa-quote-left" style="color: #7fbfbf; opacity:0.5;"></i>
+                    <p style="font-style: italic; font-size:0.95rem; margin-bottom:0;">«Мода уходит, стиль остается. А архетипы делают стиль вечным отражением вашей души».</p>
                 </div>
             </div>
         </div>
+
+        <!-- Additional services section to match the holistic approach -->
+        <h2>Мои направления и услуги</h2>
+        <div class="services-grid">
+            <div class="service-card">
+                <i class="fas fa-chart-line"></i>
+                <h3>Архетипы в стиле</h3>
+                <p>Глубокий разбор ваших архетипов, чтобы одежда стала продолжением внутреннего мира и работала на ваши цели.</p>
+            </div>
+            <div class="service-card">
+                <i class="fas fa-palette"></i>
+                <h3>Цветотип & палитра</h3>
+                <p>Индивидуальный цветовой анализ, создание гардероба в оттенках, которые освежают лицо и подчеркивают индивидуальность.</p>
+            </div>
+            <div class="service-card">
+                <i class="fas fa-tshirt"></i>
+                <h3>Базовый гардероб</h3>
+                <p>Разбор гардероба, шопинг-сопровождение в Германии и помощь в онлайн-шопинге. Эффективно, без лишнего.</p>
+            </div>
+            <div class="service-card">
+                <i class="fas fa-chalkboard"></i>
+                <h3>Для экспертов & брендов</h3>
+                <p>Визуальная концепция, обучение стилистов, создание глубинного стиля для вашего бизнеса и личного бренда.</p>
+            </div>
+        </div>
+
+        <!-- Inspiring Quote or book section -->
+        <div style="background: #f1f7f5; padding: 2.5rem; border-radius: 32px; text-align: center; margin: 3rem 0;">
+            <h3 style="margin: 0 0 0.5rem; font-size: 1.8rem;">📖 «Примерочная архетипов»</h3>
+            <p style="max-width: 700px; margin: 0 auto 1rem;">Книга-путеводитель по 12 архетипам, чтобы вы наконец поняли, какие образы раскрывают вашу силу, а какие — сковывают. Теория, практика, визуальные ключи.</p>
+            <a href="https://stilouette.com/kniga-primerochnaya-arhetipov/" class="btn" style="background: #1e2a2a;">Узнать о книге →</a>
+        </div>
+
+        <!-- Telegram / Instagram CTA -->
+        <div style="display: flex; justify-content: space-between; flex-wrap: wrap; gap: 1rem; align-items: center; border-top: 1px solid #e0eae5; padding-top: 2.5rem; margin: 2rem 0 1rem;">
+            <div>
+                <i class="fab fa-telegram" style="font-size: 1.8rem; color: #036666; margin-right: 10px;"></i>
+                <strong>Больше стиля и архетипов в Telegram:</strong> @stilouette
+            </div>
+            <div>
+                <i class="fab fa-instagram" style="font-size: 1.8rem; color: #036666; margin-right: 8px;"></i>
+                <strong>Instagram:</strong> @stilouette
+            </div>
+            <div>
+                <i class="fas fa-envelope"></i> info@stilouette.com
+            </div>
+        </div>
     </div>
+</main>
 
-    <!-- Блок 1: Акции и скидки -->
-    <div class="l-section" id="block-2">
-        <div class="block-headlines"><h2>Акции и скидки</h2></div>
-        <div class="h-row" id="offers-row-1"></div>
+<footer class="footer">
+    <div class="container footer-content">
+        <div class="copyright">
+            <p style="margin:0;">&copy; 2026 Stilouette · Ирина Корункова · все права защищены</p>
+            <div class="footer-links" style="margin-top: 0.5rem;">
+                <a href="/datenschutzerklarung/">Datenschutzerklärung</a>
+                <a href="/oferta/">Публичная оферта</a>
+                <a href="/politika-dannih/">Политика конфиденциальности</a>
+            </div>
+        </div>
+        <div class="social-icons">
+            <a href="http://www.pinterest.com/stilouette" target="_blank" aria-label="Pinterest"><i class="fab fa-pinterest"></i></a>
+            <a href="https://t.me/stilouette" target="_blank" aria-label="Telegram"><i class="fab fa-telegram"></i></a>
+            <a href="mailto:info@stilouette.com" aria-label="Email"><i class="fas fa-envelope"></i></a>
+        </div>
     </div>
-
-    <!-- Блок 2: Займы под 0% -->
-    <div class="l-section" id="block-3">
-        <div class="block-headlines"><h2>Займы под 0 %</h2></div>
-        <div class="h-row" id="offers-row-2"></div>
-    </div>
-
-    <!-- Аккордеоны -->
-    <div class="l-section l-mobile-accordion-first"><div class="info"><button class="info-title">Советы заёмщикам<span class="info-title-arrow"><svg width="13" height="8" viewBox="0 0 13 8"><path d="M1.91049 0.359375L6.50049 4.93937L11.0905 0.359375L12.5005 1.76937L6.50049 7.76937L0.500488 1.76937L1.91049 0.359375Z" fill="currentColor"/></svg></span></button><div class="info-items"><div class="info-item">Что делать если не одобрили займ? Попробуйте уменьшить запрошенную сумму и увеличить срок кредитования. К примеру, если вы брали займ на 15 000 руб. и вам отказали, то нужно разделить эту сумму на 2-3 части, т.е. взять по 5000 руб., в разных МФО, одновременно подавая заявку.</div><div class="info-item">Как увеличить вероятность одобрения. Мы рекоменудем вам подавать заявку одновременно в нескольких компаниях. Кредитным специалистам важно и то, насколько клиент интересуется процентными ставками, графиком погашения и общей переплатой по займу. Ваши заявки, задолженности, активные займы фиксируются, поэтому необходимо подавать заявку сразу, чтобы данные не успели обновится.</div><div class="info-item">Если вам не одобрила ни одна организация, нужно улучшать кредитную историю. Погасите все имеющиеся задолженности, Переждите определенное время и попробуйте несколько раз взять минимальные займы в организациях где вы не брали деньги.</div><div class="info-item">Если не успеваете погасить вовремя - оплатите проценты и продлите свой заем - иначе проценты будут очень большие. Чтобы этого не произошло, необходимо сразу же сообщить сотрудникам кредитной фирмы о своих финансовых трудностях. В этом случае возможно, что компания пойдет вам навстречу и оформит пролонгацию кредитного договора.</div></div></div></div>
-    <div class="l-section l-mobile-accordion"><div class="info"><button class="info-title">Требования к заёмщикам<span class="info-title-arrow"><svg width="13" height="8" viewBox="0 0 13 8"><path d="M1.91049 0.359375L6.50049 4.93937L11.0905 0.359375L12.5005 1.76937L6.50049 7.76937L0.500488 1.76937L1.91049 0.359375Z" fill="currentColor"/></svg></span></button><div class="info-items"><div class="info-item">— Гражданство Российской Федерации.</div><div class="info-item">— Возраст заемщика от 18 лет.</div></div></div></div>
-    <div class="l-section l-mobile-accordion"><div class="info"><button class="info-title">Информация о полной стоимости займа и пример расчета<span class="info-title-arrow"><svg width="13" height="8" viewBox="0 0 13 8"><path d="M1.91049 0.359375L6.50049 4.93937L11.0905 0.359375L12.5005 1.76937L6.50049 7.76937L0.500488 1.76937L1.91049 0.359375Z" fill="currentColor"/></svg></span></button><div class="info-items"><div class="info-item">Процентная ставка по потребительским кредитам и кредитным картам - от 9,99% до 31% годовых. Например, если Вы взяли кредит на сумму 100 000 рублей на 1 год, то после истечения срока кредита, Вам необходимо будет выплатить от 112 900 до 131 000 рублей.</div><div class="info-item">Срок кредита от 91 дня до 5 лет. Возможно как продление кредита, так и его досрочное погашение. При досрочном погашении комиссия за использование кредита будет пересчитана пропорционально сроку пользования.</div><div class="info-item">Кредит предоставляется в размере 1000 руб. – 1 000 000 руб. Годовой процент за пользование кредитом (с учетом требований ФЗ №353-ФЗ) – 12,5%-36,6%.  Окончательные условия получения будут предложены в индивидуальном порядке.</div><div class="info-item">Дополнительных комиссий при исчисление ставки по кредитам нет.</div><div class="info-item">Размер неустойки составляет 0,10% от суммы просроченной задолженности за каждый день нарушения обязательств, но не более 10% от суммы.</div><div class="info-item">Ставка 0% действует для новых клиентов при условии полного погашения без просрочки.</div></div></div></div>
-    <div class="l-section l-mobile-accordion-last"><div class="info"><button class="info-title">Последствия невыплаты заёмных средств<span class="info-title-arrow"><svg width="13" height="8" viewBox="0 0 13 8"><path d="M1.91049 0.359375L6.50049 4.93937L11.0905 0.359375L12.5005 1.76937L6.50049 7.76937L0.500488 1.76937L1.91049 0.359375Z" fill="currentColor"/></svg></span></button><div class="info-items"><div class="info-item">В случае невозвращения общей суммы кредита кредитор вынуждено начислит штраф за просрочку. Большинство кредиторов идут на уступки и дают дополнительные 3 рабочих дня для оплаты. Они предусмотрены специально для Вас на случай, к примеру, если банковский перевод занял больше времени, чем обычно, или Вы просто поздно отправили сумму. Однако в случае неполучения от Вас какой-либо реакции в течение продолжительного времени будет начислен штраф за просрочку погашения кредита размером в среднем 0,10% от первоначальной суммы кредита, данные о Вас могут быть переданы в реестр должников, а задолженность - коллекторскому агентству для взыскания долга.</div><div class="info-item">О всех приближающихся сроках платежа кредитор своевременно информирует Вас по СМС и электронной почте. Рекомендуем Вам вносить платеж в день получения данных напоминаний. Так Вы сохраните репутацию добросовестного заемщика и сможете получить скидки при последующем обращении в организацию.</div><div class="info-item">Предложение не является оффертой. Конечные условия уточняйте при прямом общении с кредиторами.</div></div></div></div>
-
-    <div class="l-section"><div class="partners"><div class="partners-title">Информация о кредиторах, представленных на сайте</div><div class="partners-items" id="partnersList"></div></div></div>
-
-    <div id="footer"><div class="footer-message">Настоящий сайт не принадлежит финансовой организации и на нём не оказываются финансовые услуги. Настоящий сайт является составным произведением, которое представляет собой в том числе каталог товарных знаков (знаков обслуживания), опубликованных в открытых реестрах ФИПС (Роспатент) и сопровождающихся подобранным каталогом финансовых услуг. Финансовые услуги из каталога оказываются непосредственно финансовыми организациями, и до их заказа вы должны ознакомиться с условиями документов, опубликованных непосредственно финансовой организацией. Исключительное право на товарные знаки (знаки обслуживания), представленные в вышеуказанном каталоге, принадлежат их правообладателям и охраняются в соответствии с выданными ФИПС (Роспатент) правоустанавливающими документами для индивидуализации товаров, работ или услуг их непосредственных правообладателей.</div><div class="l-logo"></div></div>
-</div>
-
-<div class="scroll-up" id="scrollUp"><div class="scroll-up-text">вверх</div></div>
+</footer>
 
 <script>
-    // моковые данные офферов (в реальности подгружаются, но для дизайна используем имеющуюся структуру)
-    const offersBlock1 = [
-        { label:"Без справок", url:"#", logo:"https://lead-core-cache.s3-cdn.com/fin_showcase_offer.logo/031fe0b221da4ed181bbed3844ebe3a5.png", percent:"0-292%", term:"до 30 дней", approve:"94%", amount:"100 000 ₽", owner:"credit7.ru" },
-        { label:"Высокое одобрение", url:"#", logo:"https://lead-core-cache.s3-cdn.com/offer.logo/a55d211ef1ba04dea65c95732e0d179611e7aa30.jpeg", percent:"0-292%", term:"до 365 дней", approve:"91%", amount:"100 000 ₽", owner:"oneclickmoney.ru" },
-        { label:"Акция: Первый займ 0 %", url:"#", logo:"https://lead-core-cache.s3-cdn.com/offer.logo/f5a6537655517a770d2964d70b63a404752a9b06.png", percent:"0-292%", term:"до 16 дней", approve:"92%", amount:"30 000 ₽", owner:"boostra.ru" },
-        { label:"Займ без процентов", url:"#", logo:"https://lead-core-cache.s3-cdn.com/offer.logo/051c6c782b577beb3d805ad08ce0ff2466a16742.png", percent:"0-292%", term:"до 21 дня", approve:"95%", amount:"30 000 ₽", owner:"moneyman.ru" }
-    ];
-    const offersBlock2 = [
-        { label:"Одобрено", url:"#", logo:"https://lead-core-cache.s3-cdn.com/fin_showcase_offer.logo/2fbfda3567664fe9835788e81f5bf497.png", percent:"0-292%", term:"до 365 дней", approve:"99%", amount:"80 000 ₽", owner:"telezaim.ru" },
-        { label:"Новый займ", url:"#", logo:"https://lead-core-cache.s3-cdn.com/fin_showcase_offer.logo/a15ac8c93e504138b77117bb5bc48c20.png", percent:"0-292%", term:"до 365 дней", approve:"98%", amount:"100 000 ₽", owner:"primezaim.su" }
-    ];
-    function renderOffers(containerId, offers) {
-        const container = document.getElementById(containerId);
-        if(!container) return;
-        container.innerHTML = offers.map(offer => `
-            <div class="h-row-item">
-                <a href="${offer.url}" target="_blank" class="offer-link">
-                    <div class="h-wa2">
-                        <div class="h-v-label"><div class="h-v-label-item"><p>${offer.label}</p></div></div>
-                        <div class="h-wa2-section">
-                            <div class="owner-label"><span class="owner-label-text">реклама&nbsp;|&nbsp;</span><span class="owner-label-url">${offer.owner}</span></div>
-                            <div class="h-wa2-wrapper">
-                                <ul class="h-wa2-items">
-                                    <li class="h-wa2-logo-wrapper"><div class="h-wa2-logo"><img src="${offer.logo}" alt="logo"></div></li>
-                                    <li class="h-wa2-percent-wrapper is-d-none-mobile"><p class="h-wa2-percent">ПСК <span>${offer.percent}</span></p></li>
-                                    <li class="h-wa2-term-wrapper is-d-none-mobile"><p class="h-wa2-term">Срок <span>${offer.term}</span></p></li>
-                                    <li class="h-wa2-approve-wrapper is-d-none-mobile"><div class="h-wa2-approve"><div class="h-wa2-approve-title">Вероятность одобрения</div><div class="h-wa2-approve-value">${offer.approve}</div></div></li>
-                                    <li class="h-wa2-amount-wrapper is-d-none-mobile"><p class="h-wa2-amount">до <span>${offer.amount}</span></p></li>
-                                    <li class="h-wa2-groups-wrapper is-d-flex-mobile">
-                                        <ul class="h-wa2-items-group1"><li class="h-wa2-items-group-item"><p class="h-wa2-percent">${offer.percent}</p></li><li class="h-wa2-items-group-item"><p class="h-wa2-term">${offer.term}</p></li></ul>
-                                        <ul class="h-wa2-items-group2"><li class="h-wa2-items-group-item"><p class="h-wa2-amount">до ${offer.amount}</p></li><li class="h-wa2-items-group-item"><div class="h-wa2-approve"><div class="h-wa2-approve-value">Одобрение ${offer.approve}</div></div></li></ul>
-                                    </li>
-                                    <li class="h-wa2-button-wrapper"><div class="h-wa2-button">Получить</div></li>
-                                </ul>
-                            </div>
-                        </div>
-                    </div>
-                </a>
-            </div>
-        `).join('');
-    }
-    renderOffers('offers-row-1', offersBlock1);
-    renderOffers('offers-row-2', offersBlock2);
-    // партнеры
-    const partners = ["ООО МКК «Каппадокия», ОГРН 1197456052199, Лицензия: 2403045010082","АО «МКК УФ», Лицензия 001503760007126","ООО «Финтех-Маркет», Лицензия 2303045009968","ООО МФК «МАНИ МЕН», Лицензия 2110177000478"];
-    document.getElementById('partnersList').innerHTML = partners.map(p => `<div class="partners-item">${p}</div>`).join('');
-
-    // аккордеоны
-    document.querySelectorAll('.info').forEach(acc => {
-        const btn = acc.querySelector('.info-title');
+    // Mobile menu toggle
+    const btn = document.getElementById('mobileMenuBtn');
+    const nav = document.getElementById('navMenu');
+    if(btn) {
         btn.addEventListener('click', () => {
-            acc.classList.toggle('active');
+            nav.classList.toggle('show');
         });
-    });
-    function openMenu() { document.getElementById('sideMenu').classList.add('open'); }
-    function closeMenu() { document.getElementById('sideMenu').classList.remove('open'); }
-    window.openMenu = openMenu;
-    window.closeMenu = closeMenu;
-    // scroll up
-    const scrollBtn = document.getElementById('scrollUp');
-    scrollBtn.addEventListener('click', () => window.scrollTo({top:0, behavior:'smooth'}));
-    // counter mock
-    const counterEl = document.querySelector('.visit-counter-value');
-    if(counterEl) counterEl.innerText = '1 247';
-    // geo mock
-    const geoWrapper = document.getElementById('geoWindow');
-    if(geoWrapper) geoWrapper.style.display = 'none';
+    }
 </script>
 </body>
 </html>
