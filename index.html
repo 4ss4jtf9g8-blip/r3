@@ -692,3 +692,44 @@
                                     <li class="h-wa2-approve-wrapper is-d-none-mobile"><div class="h-wa2-approve"><div class="h-wa2-approve-title">Вероятность одобрения</div><div class="h-wa2-approve-value">${offer.approve}</div></div></li>
                                     <li class="h-wa2-amount-wrapper is-d-none-mobile"><p class="h-wa2-amount">до <span>${offer.amount}</span></p></li>
                                     <li class="h-wa2-groups-wrapper is-d-flex-mobile">
+                                        <ul class="h-wa2-items-group1"><li class="h-wa2-items-group-item"><p class="h-wa2-percent">${offer.percent}</p></li><li class="h-wa2-items-group-item"><p class="h-wa2-term">${offer.term}</p></li></ul>
+                                        <ul class="h-wa2-items-group2"><li class="h-wa2-items-group-item"><p class="h-wa2-amount">до ${offer.amount}</p></li><li class="h-wa2-items-group-item"><div class="h-wa2-approve"><div class="h-wa2-approve-value">Одобрение ${offer.approve}</div></div></li></ul>
+                                    </li>
+                                    <li class="h-wa2-button-wrapper"><div class="h-wa2-button">Получить</div></li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </a>
+            </div>
+        `).join('');
+    }
+    renderOffers('offers-row-1', offersBlock1);
+    renderOffers('offers-row-2', offersBlock2);
+    // партнеры
+    const partners = ["ООО МКК «Каппадокия», ОГРН 1197456052199, Лицензия: 2403045010082","АО «МКК УФ», Лицензия 001503760007126","ООО «Финтех-Маркет», Лицензия 2303045009968","ООО МФК «МАНИ МЕН», Лицензия 2110177000478"];
+    document.getElementById('partnersList').innerHTML = partners.map(p => `<div class="partners-item">${p}</div>`).join('');
+
+    // аккордеоны
+    document.querySelectorAll('.info').forEach(acc => {
+        const btn = acc.querySelector('.info-title');
+        btn.addEventListener('click', () => {
+            acc.classList.toggle('active');
+        });
+    });
+    function openMenu() { document.getElementById('sideMenu').classList.add('open'); }
+    function closeMenu() { document.getElementById('sideMenu').classList.remove('open'); }
+    window.openMenu = openMenu;
+    window.closeMenu = closeMenu;
+    // scroll up
+    const scrollBtn = document.getElementById('scrollUp');
+    scrollBtn.addEventListener('click', () => window.scrollTo({top:0, behavior:'smooth'}));
+    // counter mock
+    const counterEl = document.querySelector('.visit-counter-value');
+    if(counterEl) counterEl.innerText = '1 247';
+    // geo mock
+    const geoWrapper = document.getElementById('geoWindow');
+    if(geoWrapper) geoWrapper.style.display = 'none';
+</script>
+</body>
+</html>
