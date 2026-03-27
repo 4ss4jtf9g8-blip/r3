@@ -1,465 +1,369 @@
 <!DOCTYPE html>
-<html lang="ru">
+<html lang="ru" class="scroll-smooth">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
-    <title>Ирина Корункова | Stilouette — Стилист и эксперт по архетипам</title>
-    <meta name="description" content="Персональный стилист онлайн, эксперт по архетипам. Помогаю найти свой стиль через глубинные концепции и архетипы. Консультации в Германии и онлайн по всему миру.">
-    
-    <!-- Google Fonts & Icons -->
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,300;14..32,400;14..32,500;14..32,600;14..32,700&family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
-    
-    <style>
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
-
-        body {
-            font-family: 'Inter', sans-serif;
-            color: #1e2a2a;
-            background-color: #ffffff;
-            line-height: 1.55;
-            scroll-behavior: smooth;
-        }
-
-        /* Typography */
-        h1, h2, h3, .logo, .nav-links a, .btn {
-            font-family: 'Cormorant Garamond', serif;
-        }
-
-        h1 {
-            font-size: 3.8rem;
-            font-weight: 600;
-            letter-spacing: -0.02em;
-            line-height: 1.2;
-            color: #1e2a2a;
-            margin-bottom: 1.5rem;
-        }
-
-        h2 {
-            font-size: 2.4rem;
-            font-weight: 500;
-            letter-spacing: -0.01em;
-            margin-bottom: 2rem;
-            border-left: 4px solid #7fbfbf;
-            padding-left: 1rem;
-        }
-
-        h3 {
-            font-size: 1.4rem;
-            font-weight: 600;
-            margin: 1.5rem 0 0.75rem;
-        }
-
-        p {
-            margin-bottom: 1.4rem;
-            font-weight: 400;
-            color: #2c3e3e;
-        }
-
-        a {
-            color: #036666;
-            text-decoration: none;
-            transition: all 0.25s ease;
-            border-bottom: 1px solid transparent;
-        }
-
-        a:hover {
-            color: #7fbfbf;
-            border-bottom-color: #7fbfbf;
-        }
-
-        .container {
-            max-width: 1280px;
-            margin: 0 auto;
-            padding: 0 2rem;
-        }
-
-        /* Header & Navigation */
-        .site-header {
-            padding: 1.5rem 0;
-            border-bottom: 1px solid #eef2f0;
-            background: white;
-            position: sticky;
-            top: 0;
-            z-index: 100;
-            backdrop-filter: blur(8px);
-            background: rgba(255,255,255,0.96);
-        }
-
-        .header-inner {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            flex-wrap: wrap;
-        }
-
-        .logo a {
-            font-size: 1.8rem;
-            font-weight: 600;
-            letter-spacing: -0.5px;
-            color: #1e2a2a;
-            border-bottom: none;
-            text-decoration: none;
-            font-family: 'Cormorant Garamond', serif;
-        }
-
-        .logo span {
-            color: #7fbfbf;
-            font-weight: 700;
-        }
-
-        .nav-links {
-            display: flex;
-            gap: 2rem;
-            list-style: none;
-        }
-
-        .nav-links a {
-            font-family: 'Inter', sans-serif;
-            font-weight: 500;
-            font-size: 0.95rem;
-            text-transform: uppercase;
-            letter-spacing: 1px;
-            color: #2c3e3e;
-            border-bottom: none;
-        }
-
-        .nav-links a:hover, .nav-links .active a {
-            color: #036666;
-        }
-
-        /* Mobile menu */
-        .menu-toggle {
-            display: none;
-            font-size: 1.8rem;
-            cursor: pointer;
-            background: none;
-            border: none;
-        }
-
-        /* Hero Section */
-        .hero {
-            margin: 3rem 0 4rem;
-            border-radius: 28px;
-            overflow: hidden;
-            box-shadow: 0 20px 35px -12px rgba(0,0,0,0.08);
-        }
-
-        .hero-img {
-            width: 100%;
-            height: auto;
-            display: block;
-            object-fit: cover;
-            max-height: 480px;
-            width: 100%;
-        }
-
-        /* Main Content */
-        .about-content {
-            display: grid;
-            grid-template-columns: 1fr 0.9fr;
-            gap: 3rem;
-            margin: 4rem 0 5rem;
-        }
-
-        .bio-text {
-            font-size: 1.06rem;
-        }
-
-        .bio-highlight {
-            background: #f6fbf9;
-            padding: 2rem;
-            border-radius: 24px;
-            align-self: start;
-            border: 1px solid #e0ebe7;
-        }
-
-        .stats-list {
-            list-style: none;
-            margin-top: 1.5rem;
-        }
-
-        .stats-list li {
-            margin-bottom: 1rem;
-            display: flex;
-            align-items: center;
-            gap: 0.75rem;
-            font-weight: 500;
-        }
-
-        .stats-list i {
-            color: #7fbfbf;
-            font-size: 1.2rem;
-            width: 1.6rem;
-        }
-
-        .btn {
-            display: inline-block;
-            background: #036666;
-            color: white;
-            padding: 0.9rem 2rem;
-            border-radius: 40px;
-            font-weight: 600;
-            font-family: 'Inter', sans-serif;
-            font-size: 0.9rem;
-            letter-spacing: 0.5px;
-            margin-top: 0.5rem;
-            border: none;
-            transition: 0.2s;
-            text-decoration: none;
-        }
-
-        .btn:hover {
-            background: #7fbfbf;
-            color: #1e2a2a;
-            transform: translateY(-2px);
-            border-bottom: none;
-        }
-
-        .services-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
-            gap: 2rem;
-            margin: 3rem 0;
-        }
-
-        .service-card {
-            background: #ffffff;
-            border: 1px solid #e9f0ed;
-            border-radius: 24px;
-            padding: 1.8rem;
-            transition: all 0.2s;
-        }
-
-        .service-card:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 20px 30px -15px rgba(0,0,0,0.05);
-            border-color: #cde3dc;
-        }
-
-        .service-card i {
-            font-size: 2rem;
-            color: #7fbfbf;
-            margin-bottom: 1rem;
-        }
-
-        .service-card h3 {
-            margin-top: 0;
-        }
-
-        /* Footer */
-        .footer {
-            background: #f8faf8;
-            padding: 3rem 0 2rem;
-            margin-top: 5rem;
-            border-top: 1px solid #e0eae5;
-        }
-
-        .footer-content {
-            display: flex;
-            justify-content: space-between;
-            flex-wrap: wrap;
-            gap: 2rem;
-            align-items: center;
-        }
-
-        .footer-links {
-            display: flex;
-            gap: 2rem;
-            flex-wrap: wrap;
-        }
-
-        .social-icons a {
-            font-size: 1.5rem;
-            margin-left: 1rem;
-            color: #3e5a5a;
-            border-bottom: none;
-        }
-
-        .social-icons a:hover {
-            color: #036666;
-        }
-
-        @media (max-width: 880px) {
-            .about-content {
-                grid-template-columns: 1fr;
-                gap: 2rem;
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+  <title>Velion — Премиальные сайты, которые продают | Конверсия +30–70%</title>
+  <meta name="description" content="Разработка и редизайн сайтов с гарантией роста продаж. Премиум дизайн, высокая конверсия, сроки 14-25 дней. Получите расчет за 5 минут.">
+  <meta name="keywords" content="создание сайтов, редизайн, премиальный дизайн, рост конверсии, веб-студия Velion">
+  <meta name="author" content="Velion Agency">
+  
+  <!-- Tailwind + Fonts -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      darkMode: 'class',
+      theme: {
+        extend: {
+          colors: {
+            'velion-green': '#00E6A0',
+            'velion-gold': '#D4AF77',
+            'velion-dark': '#0A0A0A',
+            'velion-darker': '#111111',
+            'velion-card': '#141414',
+            'velion-border': '#2A2A2A',
+          },
+          fontFamily: {
+            sans: ['Inter', 'system-ui', 'sans-serif'],
+            heading: ['Satoshi', 'Helvetica Neue', 'sans-serif'],
+          },
+          animation: {
+            'float': 'float 6s ease-in-out infinite',
+            'glow': 'glow 2s ease-in-out infinite alternate',
+          },
+          keyframes: {
+            float: {
+              '0%, 100%': { transform: 'translateY(0px)' },
+              '50%': { transform: 'translateY(-12px)' },
+            },
+            glow: {
+              '0%': { boxShadow: '0 0 5px rgba(0,230,160,0.3)' },
+              '100%': { boxShadow: '0 0 25px rgba(0,230,160,0.6)' },
             }
-            h1 {
-                font-size: 2.8rem;
-            }
-            .nav-links {
-                display: none;
-                width: 100%;
-                flex-direction: column;
-                text-align: center;
-                padding: 1.5rem 0;
-                gap: 1rem;
-            }
-            .nav-links.show {
-                display: flex;
-            }
-            .menu-toggle {
-                display: block;
-            }
-            .header-inner {
-                position: relative;
-            }
-            .container {
-                padding: 0 1.5rem;
-            }
+          }
         }
-        
-        @media (max-width: 560px) {
-            h1 { font-size: 2.2rem; }
-            h2 { font-size: 1.8rem; }
-            .btn { padding: 0.7rem 1.5rem; }
-        }
-        
-        .feature-img {
-            width: 100%;
-            border-radius: 28px;
-            margin-bottom: 1rem;
-        }
-    </style>
-</head>
-<body>
-
-<header class="site-header">
-    <div class="container header-inner">
-        <div class="logo">
-            <a href="/">Stilouette<span>.</span></a>
-        </div>
-        <button class="menu-toggle" id="mobileMenuBtn" aria-label="Menu">
-            <i class="fas fa-bars"></i>
-        </button>
-        <ul class="nav-links" id="navMenu">
-            <li><a href="/">Главная</a></li>
-            <li class="active"><a href="/o-sebe/">Обо мне</a></li>
-            <li><a href="/uslugi-2/">Услуги</a></li>
-            <li><a href="/blog/">Блог</a></li>
-            <li><a href="/kontakt/">Контакты</a></li>
-        </ul>
-    </div>
-</header>
-
-<main>
-    <div class="container">
-        <!-- Hero Image (featured) -->
-        <div class="hero">
-            <img class="hero-img" src="https://i0.wp.com/stilouette.com/wp-content/uploads/2023/11/feature-title-about-me-2.png?fit=1800%2C800&ssl=1" alt="Ирина Корункова, стилист и эксперт по архетипам">
-        </div>
-
-        <!-- Main About Section with modern two-column layout -->
-        <div class="about-content">
-            <div class="bio-text">
-                <h1>Ирина Корункова</h1>
-                <p style="font-size:1.2rem; font-weight: 400; color: #2c6e6e;">Персональный стилист, эксперт по архетипам, автор книги «Примерочная архетипов»</p>
-                <p>Здравствуйте! Я живу в Германии, во Франкфурте-на-Майне, и с 2011 года помогаю людям по всему миру обрести гармонию с собой через стиль. Моя миссия — не просто подобрать одежду, но создать визуальный язык, который звучит в унисон с вашей личностью, историей и архетипами.</p>
-                <p>Путь к профессии стилиста был нелинейным: филологический факультет МГУ, экономика и психология в университете Мангейма, и, наконец, обучение в Гамбурге на имиджмейкера. Я глубоко убеждена: любой опыт — это фундамент. Знание мировой литературы, психологии и маркетинга помогает мне создавать глубинные стилевые концепции, которые работают не только для частных клиентов, но и для брендов и экспертов.</p>
-                <p>С 2015 года архетипы стали моим главным инструментом. Я помогаю раскрыть ваш внутренний «сценарий» через внешние образы. В 2020 году я начала обучать стилистов и коучей системе архетипов, а также консультировать экспертов помогающих профессий по визуальной упаковке их личного бренда. Летом 2025 года в издательстве «Скифия» вышла моя книга <strong>«Примерочная архетипов: от Бунтарки до Правительницы»</strong> — практическое руководство по стилю и визуалу.</p>
-                <p>Мои клиенты живут в 35 странах на 5 континентах. Это люди от 16 до 65 лет: предприниматели, творческие специалисты, молодые мамы, студенты — все, кто готов сделать свой мир ярким и осознанным. Я учу не просто следовать трендам, а развивать стильную интуицию, чтобы вы могли быть лучшей версией себя каждый день.</p>
-                <a href="/uslugi-2/" class="btn">Выбрать консультацию →</a>
-            </div>
-            <div class="bio-highlight">
-                <h3 style="margin-top:0;">Цифры и факты</h3>
-                <ul class="stats-list">
-                    <li><i class="fas fa-globe-europe"></i> Живу в Германии, работаю онлайн</li>
-                    <li><i class="fas fa-chalkboard-user"></i> 14+ лет в стиле и архетипах</li>
-                    <li><i class="fas fa-users"></i> Клиенты из 35 стран мира</li>
-                    <li><i class="fas fa-book-open"></i> Автор книги «Примерочная архетипов» (2025)</li>
-                    <li><i class="fas fa-palette"></i> Преподаватель архетипов для стилистов</li>
-                    <li><i class="fas fa-map-pin"></i> Консультации в Германии, Москве, Париже и онлайн</li>
-                </ul>
-                <div style="margin-top: 1.8rem;">
-                    <i class="fas fa-quote-left" style="color: #7fbfbf; opacity:0.5;"></i>
-                    <p style="font-style: italic; font-size:0.95rem; margin-bottom:0;">«Мода уходит, стиль остается. А архетипы делают стиль вечным отражением вашей души».</p>
-                </div>
-            </div>
-        </div>
-
-        <!-- Additional services section to match the holistic approach -->
-        <h2>Мои направления и услуги</h2>
-        <div class="services-grid">
-            <div class="service-card">
-                <i class="fas fa-chart-line"></i>
-                <h3>Архетипы в стиле</h3>
-                <p>Глубокий разбор ваших архетипов, чтобы одежда стала продолжением внутреннего мира и работала на ваши цели.</p>
-            </div>
-            <div class="service-card">
-                <i class="fas fa-palette"></i>
-                <h3>Цветотип & палитра</h3>
-                <p>Индивидуальный цветовой анализ, создание гардероба в оттенках, которые освежают лицо и подчеркивают индивидуальность.</p>
-            </div>
-            <div class="service-card">
-                <i class="fas fa-tshirt"></i>
-                <h3>Базовый гардероб</h3>
-                <p>Разбор гардероба, шопинг-сопровождение в Германии и помощь в онлайн-шопинге. Эффективно, без лишнего.</p>
-            </div>
-            <div class="service-card">
-                <i class="fas fa-chalkboard"></i>
-                <h3>Для экспертов & брендов</h3>
-                <p>Визуальная концепция, обучение стилистов, создание глубинного стиля для вашего бизнеса и личного бренда.</p>
-            </div>
-        </div>
-
-        <!-- Inspiring Quote or book section -->
-        <div style="background: #f1f7f5; padding: 2.5rem; border-radius: 32px; text-align: center; margin: 3rem 0;">
-            <h3 style="margin: 0 0 0.5rem; font-size: 1.8rem;">📖 «Примерочная архетипов»</h3>
-            <p style="max-width: 700px; margin: 0 auto 1rem;">Книга-путеводитель по 12 архетипам, чтобы вы наконец поняли, какие образы раскрывают вашу силу, а какие — сковывают. Теория, практика, визуальные ключи.</p>
-            <a href="https://stilouette.com/kniga-primerochnaya-arhetipov/" class="btn" style="background: #1e2a2a;">Узнать о книге →</a>
-        </div>
-
-        <!-- Telegram / Instagram CTA -->
-        <div style="display: flex; justify-content: space-between; flex-wrap: wrap; gap: 1rem; align-items: center; border-top: 1px solid #e0eae5; padding-top: 2.5rem; margin: 2rem 0 1rem;">
-            <div>
-                <i class="fab fa-telegram" style="font-size: 1.8rem; color: #036666; margin-right: 10px;"></i>
-                <strong>Больше стиля и архетипов в Telegram:</strong> @stilouette
-            </div>
-            <div>
-                <i class="fab fa-instagram" style="font-size: 1.8rem; color: #036666; margin-right: 8px;"></i>
-                <strong>Instagram:</strong> @stilouette
-            </div>
-            <div>
-                <i class="fas fa-envelope"></i> info@stilouette.com
-            </div>
-        </div>
-    </div>
-</main>
-
-<footer class="footer">
-    <div class="container footer-content">
-        <div class="copyright">
-            <p style="margin:0;">&copy; 2026 Stilouette · Ирина Корункова · все права защищены</p>
-            <div class="footer-links" style="margin-top: 0.5rem;">
-                <a href="/datenschutzerklarung/">Datenschutzerklärung</a>
-                <a href="/oferta/">Публичная оферта</a>
-                <a href="/politika-dannih/">Политика конфиденциальности</a>
-            </div>
-        </div>
-        <div class="social-icons">
-            <a href="http://www.pinterest.com/stilouette" target="_blank" aria-label="Pinterest"><i class="fab fa-pinterest"></i></a>
-            <a href="https://t.me/stilouette" target="_blank" aria-label="Telegram"><i class="fab fa-telegram"></i></a>
-            <a href="mailto:info@stilouette.com" aria-label="Email"><i class="fas fa-envelope"></i></a>
-        </div>
-    </div>
-</footer>
-
-<script>
-    // Mobile menu toggle
-    const btn = document.getElementById('mobileMenuBtn');
-    const nav = document.getElementById('navMenu');
-    if(btn) {
-        btn.addEventListener('click', () => {
-            nav.classList.toggle('show');
-        });
+      }
     }
-</script>
+  </script>
+  
+  <link href="https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,300;14..32,400;14..32,500;14..32,600;14..32,700;14..32,800&family=Satoshi:wght@400;500;700;900&display=swap" rel="stylesheet">
+  <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+  
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+    body {
+      background: #0A0A0A;
+      color: #EDEDED;
+      overflow-x: hidden;
+    }
+    /* Custom gradient glow */
+    .bg-radial-glow {
+      background: radial-gradient(circle at 30% 10%, rgba(0,230,160,0.08), transparent 70%);
+    }
+    .glass-card {
+      background: rgba(20, 20, 20, 0.7);
+      backdrop-filter: blur(4px);
+      border: 1px solid rgba(0,230,160,0.15);
+    }
+    .hover-lift {
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+    .hover-lift:hover {
+      transform: translateY(-6px);
+      box-shadow: 0 20px 35px -12px rgba(0,0,0,0.5);
+    }
+    /* Custom scrollbar */
+    ::-webkit-scrollbar {
+      width: 8px;
+    }
+    ::-webkit-scrollbar-track {
+      background: #111;
+    }
+    ::-webkit-scrollbar-thumb {
+      background: #00E6A0;
+      border-radius: 10px;
+    }
+    .border-gradient {
+      border-image: linear-gradient(135deg, #00E6A0, #D4AF77) 1;
+    }
+  </style>
+</head>
+<body class="antialiased bg-velion-dark">
+
+  <!-- Fixed Logo Left -->
+  <div class="fixed top-6 left-6 z-50 transition-all duration-300 hover:scale-105">
+    <img src="https://i.postimg.cc/WFZrzxCm/3fab9d5a.jpg" alt="Velion" class="h-12 w-auto drop-shadow-xl">
+  </div>
+
+  <!-- Floating Telegram Button -->
+  <a href="https://t.me/m/wrkK_h5AOTg6" target="_blank" rel="noopener noreferrer"
+     class="fixed bottom-7 right-7 z-50 bg-velion-green text-black font-bold px-6 py-4 rounded-full shadow-2xl flex items-center gap-2 transition-all duration-300 hover:scale-110 hover:shadow-[0_0_20px_rgba(0,230,160,0.5)] group">
+    <svg class="w-6 h-6 group-hover:rotate-12 transition" fill="currentColor" viewBox="0 0 24 24"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm4.64 6.36l-3.5 8.4c-.26.62-.98.62-1.24 0l-1.5-3.5-3.5-1.5c-.62-.26-.62-.98 0-1.24l8.4-3.5c.55-.23 1.07.29.84.84z"/></svg>
+    <span>Связаться</span>
+  </a>
+
+  <!-- HERO SECTION – refined, no center logo -->
+  <section class="relative min-h-screen flex items-center justify-center overflow-hidden bg-velion-darker bg-radial-glow">
+    <!-- abstract glow element -->
+    <div class="absolute top-1/3 -left-20 w-80 h-80 bg-velion-green/10 rounded-full blur-[100px]"></div>
+    <div class="absolute bottom-10 right-10 w-96 h-96 bg-velion-gold/5 rounded-full blur-[120px]"></div>
+    
+    <div class="relative z-10 text-center px-6 max-w-6xl" data-aos="fade-up" data-aos-duration="1200">
+      <div class="inline-block mb-4 px-4 py-1 rounded-full border border-velion-green/30 bg-black/40 backdrop-blur-sm">
+        <span class="text-velion-green text-sm font-medium tracking-wide">✨ WEB-АГЕНТСТВО №1 ПО РОСТУ КОНВЕРСИИ</span>
+      </div>
+      <h1 class="text-7xl md:text-8xl lg:text-9xl font-black leading-[1.1] mb-8 text-white tracking-tight">
+        Сайты,<br>
+        <span class="text-velion-green relative inline-block">которые продают
+          <svg class="absolute -bottom-4 left-0 w-full" viewBox="0 0 300 12" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M0 6 L300 6" stroke="#00E6A0" stroke-width="2" stroke-dasharray="6 6"/></svg>
+        </span>
+      </h1>
+      <p class="text-2xl md:text-3xl text-gray-300 font-light max-w-3xl mx-auto leading-relaxed">
+        Премиальный дизайн • Быстрая разработка • <span class="text-velion-green font-bold">+30–70% к конверсии</span><br>
+        <span class="text-lg md:text-xl text-gray-400">за 14–25 дней без лишних сложностей</span>
+      </p>
+      <div class="flex flex-col sm:flex-row gap-6 justify-center mt-12">
+        <a href="https://t.me/m/wrkK_h5AOTg6" target="_blank"
+           class="group relative bg-velion-green text-black font-bold text-xl px-10 py-5 rounded-2xl transition-all duration-300 hover:scale-105 shadow-2xl hover:shadow-velion-green/30 overflow-hidden">
+          <span class="relative z-10 flex items-center gap-2">Получить расчёт за 5 минут →</span>
+          <div class="absolute inset-0 bg-white/20 scale-x-0 group-hover:scale-x-100 transition-transform origin-left duration-300"></div>
+        </a>
+        <a href="#cases" 
+           class="border-2 border-velion-gold text-velion-gold font-bold text-xl px-10 py-5 rounded-2xl hover:bg-velion-gold hover:text-black transition-all duration-300 hover:scale-105 backdrop-blur-sm">
+          Смотреть кейсы
+        </a>
+      </div>
+      <div class="mt-16 flex justify-center gap-8 text-sm text-gray-400">
+        <div class="flex items-center gap-1"><div class="w-2 h-2 rounded-full bg-velion-green"></div> Гарантия роста</div>
+        <div class="flex items-center gap-1"><div class="w-2 h-2 rounded-full bg-velion-green"></div> Premium дизайн</div>
+        <div class="flex items-center gap-1"><div class="w-2 h-2 rounded-full bg-velion-green"></div> Техподдержка 24/7</div>
+      </div>
+    </div>
+  </section>
+
+  <!-- STATS SECTION (преимущества) -->
+  <section class="py-16 bg-velion-dark border-y border-velion-border">
+    <div class="max-w-7xl mx-auto px-6 grid grid-cols-2 md:grid-cols-4 gap-8 text-center" data-aos="fade-up">
+      <div class="bg-velion-card/40 p-6 rounded-2xl backdrop-blur-sm border border-white/5 hover:border-velion-green/30 transition"><div class="text-5xl font-black text-velion-green">+30–70%</div><p class="mt-3 text-gray-300 text-lg">рост конверсии</p></div>
+      <div class="bg-velion-card/40 p-6 rounded-2xl backdrop-blur-sm border border-white/5 hover:border-velion-green/30 transition"><div class="text-5xl font-black text-velion-gold">50+</div><p class="mt-3 text-gray-300 text-lg">успешных проектов</p></div>
+      <div class="bg-velion-card/40 p-6 rounded-2xl backdrop-blur-sm border border-white/5 hover:border-velion-green/30 transition"><div class="text-5xl font-black text-velion-green">14–25</div><p class="mt-3 text-gray-300 text-lg">дней — запуск</p></div>
+      <div class="bg-velion-card/40 p-6 rounded-2xl backdrop-blur-sm border border-white/5 hover:border-velion-green/30 transition"><div class="text-5xl font-black text-velion-gold">Premium</div><p class="mt-3 text-gray-300 text-lg">UI/UX дизайн</p></div>
+    </div>
+  </section>
+
+  <!-- SERVICES + SMART CALCULATOR -->
+  <section class="py-24 relative">
+    <div class="max-w-7xl mx-auto px-6">
+      <div class="text-center mb-16" data-aos="fade-up">
+        <span class="text-velion-green font-semibold tracking-wider text-sm">ТАРИФЫ И УСЛУГИ</span>
+        <h2 class="text-5xl md:text-6xl font-black mt-2">Прозрачные цены<br><span class="text-velion-green">без скрытых платежей</span></h2>
+      </div>
+      <div class="grid md:grid-cols-3 gap-8 mb-24">
+        <div class="bg-velion-card rounded-3xl border border-velion-border hover:border-velion-green/50 transition-all p-8 hover-lift" data-aos="fade-up">
+          <div class="text-velion-green text-4xl mb-4">🚀</div>
+          <h3 class="text-2xl font-bold">Сайт с нуля</h3>
+          <p class="text-gray-400 mt-2">Дизайн, разработка, адаптив, базовое SEO</p>
+          <div class="mt-6"><span class="text-4xl font-black">от 5 000 ₽</span><span class="text-gray-400">/проект</span></div>
+          <ul class="mt-6 space-y-2 text-gray-300 text-sm">
+            <li>✓ Индивидуальный дизайн</li>
+            <li>✓ Адаптив под все устройства</li>
+            <li>✓ Настройка форм + аналитика</li>
+          </ul>
+        </div>
+        <div class="bg-velion-card rounded-3xl border border-velion-green/40 shadow-lg shadow-velion-green/5 p-8 hover-lift relative" data-aos="fade-up" data-aos-delay="100">
+          <div class="absolute -top-3 left-6 bg-velion-green text-black px-3 py-1 rounded-full text-xs font-bold">🔥 ХИТ</div>
+          <div class="text-velion-gold text-4xl mb-4">✨</div>
+          <h3 class="text-2xl font-bold">Редизайн</h3>
+          <p class="text-gray-400 mt-2">Аудит + новый премиум-дизайн + оптимизация конверсии</p>
+          <div class="mt-6"><span class="text-4xl font-black">от 3 000 ₽</span><span class="text-gray-400">/проект</span></div>
+          <ul class="mt-6 space-y-2 text-gray-300 text-sm">
+            <li>✓ Анализ поведения</li>
+            <li>✓ Рост скорости загрузки</li>
+            <li>✓ Увеличение лидов до +70%</li>
+          </ul>
+        </div>
+        <div class="bg-velion-card rounded-3xl border border-velion-border hover:border-velion-green/50 transition-all p-8 hover-lift" data-aos="fade-up" data-aos-delay="200">
+          <div class="text-velion-green text-4xl mb-4">⚙️</div>
+          <h3 class="text-2xl font-bold">Поддержка</h3>
+          <p class="text-gray-400 mt-2">Доработки, апдейты, защита, хостинг</p>
+          <div class="mt-6"><span class="text-4xl font-black">от 2 000 ₽</span><span class="text-gray-400">/мес</span></div>
+          <ul class="mt-6 space-y-2 text-gray-300 text-sm">
+            <li>✓ Ежемесячные обновления</li>
+            <li>✓ Технический аудит</li>
+            <li>✓ Приоритетная поддержка</li>
+          </ul>
+        </div>
+      </div>
+
+      <!-- CALCULATOR - MODERN -->
+      <div class="max-w-3xl mx-auto bg-gradient-to-br from-velion-darker to-black rounded-3xl border border-velion-border p-8 md:p-10 shadow-2xl" data-aos="zoom-in" data-aos-offset="100">
+        <div class="flex flex-col md:flex-row justify-between items-start md:items-center gap-4 mb-8">
+          <div>
+            <h3 class="text-3xl font-black">💰 Калькулятор стоимости</h3>
+            <p class="text-gray-400">Выберите параметры — получите точную цену</p>
+          </div>
+          <div class="bg-black/40 px-4 py-2 rounded-full border border-velion-green/30"><span class="text-velion-green text-sm">мгновенный расчет</span></div>
+        </div>
+        <div class="grid md:grid-cols-2 gap-6 mb-8">
+          <div>
+            <label class="block text-white font-medium mb-2">Тип работы</label>
+            <select id="type" class="w-full bg-black border border-gray-700 rounded-xl p-4 text-white focus:border-velion-green focus:ring-1 focus:ring-velion-green transition">
+              <option value="5000">Сайт с нуля (5 000 ₽)</option>
+              <option value="3000">Редизайн (3 000 ₽)</option>
+              <option value="2000">Поддержка / мес (2 000 ₽)</option>
+            </select>
+          </div>
+          <div>
+            <label class="block text-white font-medium mb-2">Сложность проекта</label>
+            <select id="complexity" class="w-full bg-black border border-gray-700 rounded-xl p-4 text-white focus:border-velion-green">
+              <option value="1">Лендинг / простой (x1.0)</option>
+              <option value="1.4">Корпоративный / средний (x1.4)</option>
+              <option value="1.9">Интернет-магазин / сложный (x1.9)</option>
+            </select>
+          </div>
+        </div>
+        <button onclick="calculatePrice()" class="w-full bg-velion-green hover:bg-emerald-500 text-black font-extrabold text-xl py-5 rounded-xl transition-all shadow-lg hover:shadow-velion-green/30 flex items-center justify-center gap-2 group">
+          <span>Рассчитать стоимость</span>
+          <svg class="w-5 h-5 group-hover:translate-x-1 transition" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3"></path></svg>
+        </button>
+        <div id="result" class="mt-8 text-center hidden transition-all">
+          <div class="bg-black/50 rounded-2xl p-5 border border-velion-green/30">
+            <p class="text-gray-300 text-lg">Предварительная стоимость</p>
+            <p class="text-5xl font-black text-velion-green"><span id="price">0</span> ₽</p>
+            <p class="text-xs text-gray-500 mt-2">*точная цена после брифа, без переплат</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CASES SECTION (кейсы с реальными цифрами) -->
+  <section id="cases" class="py-24 bg-velion-darker">
+    <div class="max-w-7xl mx-auto px-6">
+      <div class="text-center mb-16" data-aos="fade-up">
+        <span class="text-velion-gold font-semibold tracking-wider">ПОРТФОЛИО</span>
+        <h2 class="text-5xl font-black mt-2">Результаты,<br>которые говорят сами за себя</h2>
+      </div>
+      <div class="grid md:grid-cols-3 gap-8">
+        <a href="https://imperiummotors.ru/" target="_blank" rel="noopener" class="group bg-velion-card rounded-2xl overflow-hidden border border-gray-800 hover:border-velion-green transition-all duration-300 hover:-translate-y-2" data-aos="fade-up">
+          <div class="h-56 overflow-hidden"><img src="https://i.postimg.cc/bZLRjcfw/568494dc.jpg" alt="Imperium Motors" class="w-full h-full object-cover group-hover:scale-105 transition duration-700"></div>
+          <div class="p-6">
+            <h3 class="text-2xl font-bold text-velion-green">Imperium Motors</h3>
+            <p class="text-gray-400 text-sm">Премиальный автосалон</p>
+            <div class="mt-4 space-y-1 text-sm"><p>📈 Конверсия: 2.1% → <strong class="text-velion-green">7.8%</strong> (+272%)</p><p>🚗 ЛИДЫ ×3.4</p><p class="text-velion-gold">Окупаемость 18 дней</p></div>
+          </div>
+        </a>
+        <a href="https://riverpark-kutuzovskiy.ru/" target="_blank" rel="noopener" class="group bg-velion-card rounded-2xl overflow-hidden border border-gray-800 hover:border-velion-green transition-all duration-300 hover:-translate-y-2" data-aos="fade-up" data-aos-delay="100">
+          <div class="h-56 overflow-hidden"><img src="https://i.postimg.cc/gL9VKG8N/06f5c6d6.jpg" alt="River Park" class="w-full h-full object-cover group-hover:scale-105 transition duration-700"></div>
+          <div class="p-6">
+            <h3 class="text-2xl font-bold text-velion-green">River Park Кутузовский</h3>
+            <p class="text-gray-400 text-sm">ЖК премиум-класса</p>
+            <div class="mt-4 space-y-1 text-sm"><p>🏢 Конверсия +<strong class="text-velion-green">240%</strong></p><p>📞 Заявок ×3.2</p><p class="text-velion-gold">Интерес вырос в 3.8x</p></div>
+          </div>
+        </a>
+        <a href="https://www.ambc.ru/" target="_blank" rel="noopener" class="group bg-velion-card rounded-2xl overflow-hidden border border-gray-800 hover:border-velion-green transition-all duration-300 hover:-translate-y-2" data-aos="fade-up" data-aos-delay="200">
+          <div class="h-56 overflow-hidden"><img src="https://i.postimg.cc/vgx794gm/8fa7fe1f.jpg" alt="AMBC Стоматология" class="w-full h-full object-cover group-hover:scale-105 transition duration-700"></div>
+          <div class="p-6">
+            <h3 class="text-2xl font-bold text-velion-green">AMBC Михаила Агами</h3>
+            <p class="text-gray-400 text-sm">Семейная стоматология</p>
+            <div class="mt-4 space-y-1 text-sm"><p>🦷 Конверсия 3.9% → <strong class="text-velion-green">11.8%</strong> (+202%)</p><p>📅 Записей ×3.1, средний чек +47%</p></div>
+          </div>
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- TESTIMONIALS SLIDER / GRID (modern) -->
+  <section class="py-24">
+    <div class="max-w-7xl mx-auto px-6 text-center">
+      <h2 class="text-5xl font-black mb-6" data-aos="fade-up">Голоса клиентов</h2>
+      <p class="text-gray-400 mb-16 text-xl">Более 50 предпринимателей доверяют нам свой бизнес</p>
+      <div class="grid md:grid-cols-3 gap-8">
+        <div class="bg-velion-card p-8 rounded-2xl border border-white/5 hover:border-velion-green/40 transition-all text-left" data-aos="fade-up" data-aos-delay="100">
+          <div class="text-velion-green text-4xl mb-4">“</div>
+          <p class="text-lg italic">Конверсия взлетела в 3 раза за первый месяц. Рекомендую команду Velion!</p>
+          <div class="mt-6 flex items-center gap-3"><div class="w-10 h-10 rounded-full bg-velion-green/20 flex items-center justify-center text-velion-green">А</div><div><p class="font-bold">Алексей</p><p class="text-xs text-gray-400">Автобизнес, Imperium Motors</p></div></div>
+        </div>
+        <div class="bg-velion-card p-8 rounded-2xl border border-white/5 hover:border-velion-green/40 transition-all text-left" data-aos="fade-up" data-aos-delay="200">
+          <div class="text-velion-green text-4xl mb-4">“</div>
+          <p class="text-lg italic">Сайт теперь продаёт, а не просто красивый. Лидов стало в 3.5 раза больше.</p>
+          <div class="mt-6 flex items-center gap-3"><div class="w-10 h-10 rounded-full bg-velion-gold/20 flex items-center justify-center text-velion-gold">М</div><div><p class="font-bold">Марина</p><p class="text-xs text-gray-400">Недвижимость, River Park</p></div></div>
+        </div>
+        <div class="bg-velion-card p-8 rounded-2xl border border-white/5 hover:border-velion-green/40 transition-all text-left" data-aos="fade-up" data-aos-delay="300">
+          <div class="text-velion-green text-4xl mb-4">“</div>
+          <p class="text-lg italic">Онлайн-запись работает идеально. Пациентов +210% за квартал.</p>
+          <div class="mt-6 flex items-center gap-3"><div class="w-10 h-10 rounded-full bg-velion-green/20 flex items-center justify-center text-velion-green">Д</div><div><p class="font-bold">Дмитрий</p><p class="text-xs text-gray-400">Медицина, AMBC</p></div></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FINAL CTA -->
+  <section class="py-28 relative overflow-hidden bg-black/70">
+    <div class="absolute inset-0 bg-[url('https://i.postimg.cc/WFZrzxCm/3fab9d5a.jpg')] opacity-5 bg-repeat bg-center"></div>
+    <div class="max-w-4xl mx-auto px-6 text-center relative z-10" data-aos="zoom-in">
+      <h2 class="text-5xl md:text-7xl font-black mb-6 leading-tight">Готовы увеличить <span class="text-velion-green">продажи?</span></h2>
+      <p class="text-xl text-gray-300 mb-12 max-w-2xl mx-auto">Оставьте заявку — подготовим индивидуальную стратегию и расчёт за 5 минут</p>
+      <a href="https://t.me/m/wrkK_h5AOTg6" target="_blank" class="inline-flex items-center gap-3 bg-velion-green text-black font-extrabold text-2xl px-12 py-6 rounded-full shadow-2xl hover:scale-105 transition-all duration-300 hover:shadow-velion-green/30">
+        Написать в Telegram
+        <svg class="w-7 h-7" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 7l5 5m0 0l-5 5m5-5H6"></path></svg>
+      </a>
+      <p class="mt-12 text-lg text-gray-400">или пишите на почту: <a href="mailto:velion.agency@gmail.com" class="text-velion-green font-medium hover:underline">velion.agency@gmail.com</a></p>
+    </div>
+  </section>
+
+  <!-- FOOTER with logo -->
+  <footer class="py-12 border-t border-gray-800 bg-velion-darker">
+    <div class="max-w-7xl mx-auto px-6 flex flex-col md:flex-row justify-between items-center gap-4">
+      <div class="flex items-center gap-3">
+        <img src="https://i.postimg.cc/WFZrzxCm/3fab9d5a.jpg" alt="Velion" class="h-9 w-auto opacity-90">
+        <span class="text-gray-500 text-sm">© 2026 Velion — Премиальная веб-разработка</span>
+      </div>
+      <div class="flex gap-6 text-sm text-gray-500">
+        <a href="#" class="hover:text-velion-green transition">Политика конфиденциальности</a>
+        <a href="#" class="hover:text-velion-green transition">Договор оферты</a>
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    function calculatePrice() {
+      const typeSelect = document.getElementById('type');
+      const complexitySelect = document.getElementById('complexity');
+      let basePrice = parseFloat(typeSelect.value);
+      let complexity = parseFloat(complexitySelect.value);
+      
+      if (isNaN(basePrice)) basePrice = 5000;
+      if (isNaN(complexity)) complexity = 1;
+      
+      let total = Math.round(basePrice * complexity);
+      // для поддержки красивой минимальной цены
+      if (typeSelect.options[typeSelect.selectedIndex]?.value === "2000" && complexity > 1) {
+        total = Math.round(2000 * complexity);
+      }
+      document.getElementById('price').innerText = total.toLocaleString('ru-RU');
+      document.getElementById('result').classList.remove('hidden');
+    }
+    
+    // AOS init
+    AOS.init({ once: true, duration: 800, easing: 'ease-out', offset: 20 });
+    
+    // Smooth scroll
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+      anchor.addEventListener('click', function(e) {
+        const href = this.getAttribute('href');
+        if(href === "#" || href === "") return;
+        const target = document.querySelector(href);
+        if(target) {
+          e.preventDefault();
+          target.scrollIntoView({ behavior: 'smooth', block: 'start' });
+        }
+      });
+    });
+  </script>
 </body>
 </html>
