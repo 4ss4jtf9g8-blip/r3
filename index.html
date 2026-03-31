@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
-    <title>Геометрия 9 класс | ПОЛНЫЙ ЗАЧЁТ: все билеты с определениями, доказательствами и рисунками</title>
+    <title>Геометрия 9 класс — Полный зачёт: все билеты с подробнейшими объяснениями и рисунками</title>
     <style>
         * {
             margin: 0;
@@ -11,79 +11,82 @@
             box-sizing: border-box;
         }
         body {
-            font-family: 'Segoe UI', 'Roboto', 'Noto Sans', system-ui, -apple-system, 'Helvetica Neue', sans-serif;
-            background: #f4f9fe;
+            font-family: 'Segoe UI', 'Roboto', 'Noto Sans', system-ui, sans-serif;
+            background: linear-gradient(135deg, #f0f4fa 0%, #e8eef4 100%);
             color: #1a2c3e;
-            line-height: 1.6;
+            line-height: 1.65;
             scroll-behavior: smooth;
         }
-        .hero {
+        header {
             background: linear-gradient(135deg, #0a2f44, #0f6b7c);
             color: white;
             padding: 2.5rem 1.5rem;
             text-align: center;
-            box-shadow: 0 12px 25px -8px rgba(0,0,0,0.3);
+            border-radius: 0 0 32px 32px;
+            box-shadow: 0 10px 25px rgba(0,0,0,0.15);
         }
-        .hero h1 { font-size: 2.3rem; margin-bottom: 0.6rem; letter-spacing: -0.5px; }
-        .hero p { font-size: 1.2rem; max-width: 900px; margin: 0 auto; opacity: 0.9; }
-        .ticket-nav {
+        header h1 { font-size: 2.2rem; margin-bottom: 0.5rem; letter-spacing: -0.5px; }
+        header p { font-size: 1.2rem; opacity: 0.9; max-width: 800px; margin: 0 auto; }
+        
+        .nav {
             background: white;
             padding: 1rem;
             display: flex;
             flex-wrap: wrap;
-            justify-content: center;
             gap: 10px;
+            justify-content: center;
             position: sticky;
             top: 0;
             z-index: 200;
-            box-shadow: 0 8px 18px rgba(0,0,0,0.1);
+            box-shadow: 0 8px 20px rgba(0,0,0,0.1);
             border-bottom: 3px solid #f4a261;
         }
-        .ticket-nav button {
+        .nav button {
             background: #0a2f44;
             border: none;
             color: white;
             font-weight: bold;
             font-size: 1rem;
-            width: 50px;
-            height: 50px;
-            border-radius: 50px;
+            width: 52px;
+            height: 52px;
+            border-radius: 50%;
             cursor: pointer;
-            transition: 0.2s;
-            box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+            transition: all 0.2s ease;
+            box-shadow: 0 2px 6px rgba(0,0,0,0.15);
         }
-        .ticket-nav button:hover { background: #f4a261; color: #1e2f3a; transform: translateY(-3px);}
-        .ticket-nav button.active { background: #f4a261; color: #1e2f3a; box-shadow: 0 0 0 3px rgba(244,162,97,0.6);}
+        .nav button:hover { background: #f4a261; color: #1e2f3a; transform: translateY(-3px);}
+        .nav button.active { background: #f4a261; color: #1e2f3a; box-shadow: 0 0 0 3px rgba(244,162,97,0.5);}
+        
         .container { max-width: 1300px; margin: 2rem auto; padding: 0 1.5rem; }
-        .ticket-card {
+        .ticket {
             background: white;
-            border-radius: 36px;
-            box-shadow: 0 25px 40px -14px rgba(0,0,0,0.2);
-            margin-bottom: 3rem;
+            border-radius: 32px;
+            box-shadow: 0 20px 35px -12px rgba(0,0,0,0.2);
+            margin-bottom: 2.5rem;
             overflow: hidden;
         }
-        .ticket-title {
-            background: #0f6b7c;
-            padding: 1.3rem 2rem;
+        .ticket-header {
+            background: linear-gradient(135deg, #0f6b7c, #0a5c6e);
+            padding: 1.2rem 2rem;
             color: white;
-            font-size: 2rem;
+            font-size: 1.8rem;
             font-weight: 700;
-            border-left: 10px solid #f4a261;
+            border-left: 8px solid #f4a261;
         }
-        .ticket-body { padding: 2rem 2rem 2rem 2rem; }
-        .section-block {
-            margin-bottom: 3rem;
+        .ticket-body { padding: 2rem; }
+        .question-block {
+            margin-bottom: 2.5rem;
             border-bottom: 1px solid #e0edf2;
             padding-bottom: 2rem;
         }
-        .section-block:last-child { border-bottom: none; margin-bottom: 0; padding-bottom: 0; }
-        .section-title {
-            font-size: 1.75rem;
+        .question-block:last-child { border-bottom: none; margin-bottom: 0; padding-bottom: 0; }
+        .question-title {
+            font-size: 1.5rem;
             font-weight: 600;
             color: #0a5c6e;
-            margin-bottom: 1.2rem;
-            padding-left: 1rem;
-            border-left: 7px solid #f4a261;
+            margin-bottom: 1rem;
+            padding-left: 0.8rem;
+            border-left: 5px solid #f4a261;
         }
         .definition-box {
             background: #eef2fa;
@@ -92,338 +95,570 @@
             margin: 1rem 0;
             border-left: 5px solid #0f6b7c;
         }
-        .theorem-box {
+        .theorem {
             background: #e7f3f0;
-            padding: 1.3rem 1.8rem;
-            border-radius: 28px;
-            margin: 1rem 0;
+            padding: 1.2rem 1.8rem;
+            border-radius: 24px;
+            margin: 1.2rem 0;
             border-left: 6px solid #2c7da0;
             font-weight: 500;
         }
-        .proof-box {
+        .proof {
             background: #fff7ea;
-            padding: 1.5rem 1.8rem;
-            border-radius: 28px;
-            margin: 1.3rem 0;
+            padding: 1.3rem 1.8rem;
+            border-radius: 24px;
+            margin: 1.2rem 0;
             position: relative;
-            box-shadow: 0 3px 12px rgba(0,0,0,0.05);
+            border-left: 6px solid #f4a261;
         }
-        .proof-box::before {
+        .proof::before {
             content: "📐 ДОКАЗАТЕЛЬСТВО";
             font-weight: bold;
             display: block;
-            margin-bottom: 0.8rem;
+            margin-bottom: 0.7rem;
             color: #c26b2c;
-            font-size: 0.95rem;
-            letter-spacing: 0.8px;
-        }
-        .drawing-svg {
-            background: #ffffff;
-            border-radius: 28px;
-            margin: 1.6rem 0;
-            text-align: center;
-            box-shadow: 0 8px 20px rgba(0,0,0,0.05);
-            padding: 1rem 0.5rem;
-            border: 1px solid #d9e8ed;
-        }
-        svg { max-width: 100%; height: auto; background: #fefef7; border-radius: 20px; }
-        .fig-caption {
-            text-align: center;
             font-size: 0.85rem;
-            color: #3d6a7c;
-            margin-top: 10px;
+            letter-spacing: 0.5px;
+        }
+        .drawing {
+            background: linear-gradient(145deg, #fefef7, #faf9f2);
+            border-radius: 24px;
+            margin: 1.5rem 0;
+            text-align: center;
+            padding: 1rem;
+            box-shadow: 0 6px 14px rgba(0,0,0,0.05);
+            border: 1px solid #e8e2d0;
+        }
+        svg {
+            max-width: 100%;
+            height: auto;
+            background: transparent;
+        }
+        .caption {
+            text-align: center;
             font-style: italic;
+            color: #5a6e7c;
+            margin-top: 0.5rem;
+            font-size: 0.85rem;
+        }
+        .formula {
+            font-family: 'Courier New', monospace;
+            background: #eef2fa;
+            padding: 0.2rem 0.6rem;
+            border-radius: 12px;
+            display: inline-block;
         }
         footer {
             text-align: center;
-            padding: 2.5rem 1rem;
+            padding: 2rem;
             color: #2c6070;
             border-top: 1px solid #cce0e8;
             margin-top: 1rem;
-            font-size: 0.95rem;
         }
         @media (max-width: 700px) {
-            .ticket-title { font-size: 1.5rem; }
-            .section-title { font-size: 1.4rem; }
+            .ticket-header { font-size: 1.4rem; }
+            .question-title { font-size: 1.2rem; }
             .ticket-body { padding: 1.2rem; }
         }
     </style>
 </head>
 <body>
-<div class="hero">
-    <h1>📐 ГЕОМЕТРИЯ 9 КЛАСС | ПОЛНЫЙ ЗАЧЁТ</h1>
-    <p>Все 21 билет: определения + доказательства каждой теоремы + наглядные рисунки</p>
-</div>
-<div class="ticket-nav" id="nav-buttons"></div>
-<div class="container" id="tickets-container"></div>
-<footer>
-    ⚡ Каждый билет содержит определения всех понятий, строгие доказательства теорем и поясняющие рисунки.<br>
-    Готовьтесь к зачёту с полным пониманием материала!
-</footer>
+    <header>
+        <h1>📐 ГЕОМЕТРИЯ 9 КЛАСС | ПОЛНЫЙ ЗАЧЁТ</h1>
+        <p>Все 21 билет: подробнейшие определения, полные доказательства каждой теоремы, красивые векторные рисунки</p>
+    </header>
 
-<script>
-    const tickets = [];
+    <div class="nav" id="nav"></div>
+    <div class="container" id="tickets-container"></div>
 
-    // ==================== БИЛЕТ 1 ====================
-    tickets.push({
-        title: "Билет №1",
-        parts: [
-            { q: "Аксиомы планиметрии. Отрезок. Луч. Угол. Биссектриса угла. Равенство геометрических фигур.",
-              a: `<div class="definition-box"><strong>📖 Аксиомы планиметрии:</strong><br>1) Через любые две точки проходит единственная прямая.<br>2) На любой прямой от любой точки можно отложить отрезок заданной длины.<br>3) Все прямые углы равны.<br>4) Через точку, не лежащую на данной прямой, проходит единственная прямая, параллельная данной.</div>
-              <div class="definition-box"><strong>📖 Отрезок</strong> — часть прямой, ограниченная двумя точками.<br><strong>Луч</strong> — часть прямой, состоящая из данной точки и всех точек, лежащих по одну сторону от неё.<br><strong>Угол</strong> — фигура, образованная двумя лучами с общим началом.<br><strong>Биссектриса угла</strong> — луч, делящий угол на два равных угла.<br><strong>Равенство фигур</strong> — совмещение наложением (движением).</div>
-              <div class="drawing-svg"><svg width="280" height="110" viewBox="0 0 280 110"><line x1="40" y1="60" x2="140" y2="60" stroke="#0f6b7c" stroke-width="2.5"/><line x1="140" y1="60" x2="240" y2="60" stroke="#f4a261" stroke-width="2"/><circle cx="140" cy="60" r="3" fill="black"/><text x="30" y="55">A</text><text x="135" y="75">O</text><text x="245" y="55">B</text></svg><div class="fig-caption">Отрезок AB, луч OA, угол AOB</div></div>` },
-            { q: "Теорема о произведении отрезков пересекающихся хорд. Дуги между параллельными хордами. Теоремы о секущих и касательной.",
-              a: `<div class="definition-box"><strong>📖 Хорда</strong> — отрезок, соединяющий две точки окружности.<br><strong>Секущая</strong> — прямая, пересекающая окружность в двух точках.<br><strong>Касательная</strong> — прямая, имеющая с окружностью одну общую точку.<br><strong>Градусная мера дуги</strong> — градусная мера соответствующего центрального угла.</div>
-              <div class="theorem-box">✧ Теорема о пересекающихся хордах: AE·EB = CE·ED.</div>
-              <div class="proof-box">△AED и △CEB: ∠AED = ∠CEB (вертикальные), ∠EAD = ∠ECB (вписанные, опираются на дугу BD) ⇒ △AED ∼ △CEB. Из подобия AE/CE = ED/EB ⇒ AE·EB = CE·ED. ■</div>
-              <div class="theorem-box">📌 Дуги между параллельными хордами равны.</div>
-              <div class="theorem-box">📌 Теорема о секущей и касательной: MC² = MA·MB.</div>
-              <div class="proof-box">∠MCB = ∠MBC (угол между касательной и хордой равен углу в сегменте). △MCB ∼ △MBC ⇒ MC/MB = MA/MC ⇒ MC² = MA·MB. ■</div>
-              <div class="drawing-svg"><svg width="260" height="180" viewBox="0 0 260 180"><circle cx="130" cy="80" r="55" fill="none" stroke="#0f6b7c"/><line x1="92" y1="44" x2="168" y2="116" stroke="#c0392b" stroke-width="2"/><line x1="96" y1="116" x2="162" y2="44" stroke="#2c7da0" stroke-width="2"/><circle cx="128" cy="80" r="3" fill="red"/></svg><div class="fig-caption">AE·EB = CE·ED</div></div>` }
-        ]
-    });
+    <footer>
+        ⚡ Каждый билет содержит максимально подробное объяснение всех понятий, строгие доказательства теорем и наглядные рисунки.<br>
+        Подготовлено для успешной сдачи зачёта!
+    </footer>
 
-    // ==================== БИЛЕТ 2 ====================
-    tickets.push({
-        title: "Билет №2",
-        parts: [
-            { q: "Смежные и вертикальные углы. Определения, свойства. Биссектрисы смежных и вертикальных углов.",
-              a: `<div class="definition-box"><strong>📖 Смежные углы</strong> — два угла, у которых одна сторона общая, а две другие образуют прямую. Сумма = 180°.<br><strong>Вертикальные углы</strong> — стороны одного являются продолжениями сторон другого. Вертикальные углы равны.</div>
-              <div class="proof-box">∠1+∠2=180°, ∠2+∠3=180° ⇒ ∠1=∠3. ■</div>
-              <div class="definition-box">Биссектрисы смежных углов взаимно перпендикулярны. Биссектрисы вертикальных углов лежат на одной прямой.</div>
-              <div class="drawing-svg"><svg width="240" height="140" viewBox="0 0 240 140"><line x1="40" y1="70" x2="200" y2="70" stroke="#0f6b7c"/><line x1="120" y1="20" x2="120" y2="120" stroke="#f4a261"/><text x="130" y="60">α</text><text x="95" y="60">β</text></svg><div class="fig-caption">Смежные углы α+β=180°</div></div>` },
-            { q: "Многоугольник. Площадь многоугольника. Площади квадрата, прямоугольника, треугольника, параллелограмма, трапеции.",
-              a: `<div class="definition-box"><strong>📖 Многоугольник</strong> — замкнутая ломаная без самопересечений с внутренней областью.<br><strong>Площадь</strong> — аддитивная величина, равные фигуры имеют равные площади.</div>
-              <div class="theorem-box">📐 Формулы: S□=a², Sпр=ab, S△=½ah, Sпар=ah, Sтрап=½(a+b)h.</div>
-              <div class="drawing-svg"><svg width="280" height="120" viewBox="0 0 280 120"><polygon points="40,90 100,30 190,30 250,90" fill="#cbe9f0" stroke="#0f6b7c"/><line x1="100" y1="30" x2="100" y2="90" stroke="#f4a261" stroke-dasharray="4"/><text x="105" y="65">h</text></svg><div class="fig-caption">Трапеция: S = ½(a+b)h</div></div>` }
-        ]
-    });
+    <script>
+        // Полные данные по всем 21 билетам с максимально подробными объяснениями
+        const ticketsData = [];
 
-    // ==================== БИЛЕТ 3 ====================
-    tickets.push({
-        title: "Билет №3",
-        parts: [
-            { q: "Параллельные прямые. Теорема о двух прямых, параллельных третьей.",
-              a: `<div class="definition-box"><strong>📖 Параллельные прямые</strong> — не пересекаются (a∥b).</div>
-              <div class="theorem-box">Если a∥c и b∥c, то a∥b.</div>
-              <div class="proof-box">От противного: если a и b пересекаются в M, то через M проходят две прямые, параллельные c — противоречие аксиоме параллельности. ■</div>
-              <div class="drawing-svg"><svg width="280" height="100" viewBox="0 0 280 100"><line x1="30" y1="30" x2="250" y2="30" stroke="#2c7da0"/><line x1="30" y1="60" x2="250" y2="60" stroke="#2c7da0"/><line x1="30" y1="90" x2="250" y2="90" stroke="#f4a261"/></svg><div class="fig-caption">a∥c, b∥c ⇒ a∥b</div></div>` },
-            { q: "Синус, косинус, тангенс, котангенс. Тригонометрическая окружность. Основные тождества. Значения углов. Формулы приведения.",
-              a: `<div class="definition-box"><strong>📖 В прямоугольном треугольнике:</strong> sinα=прот/гип, cosα=прил/гип, tgα=sin/cos.<br><strong>На окружности:</strong> sinα — ордината, cosα — абсцисса точки.</div>
-              <div class="theorem-box">sin²α+cos²α=1, tgα·ctgα=1.</div>
-              <div class="theorem-box">Значения: sin30°=½, cos30°=√3/2, sin45°=√2/2, sin60°=√3/2, sin120°=√3/2 и т.д.</div>
-              <div class="theorem-box">Формула приведения: sin(π/2-α)=cosα</div>
-              <div class="proof-box">В прямоугольном треугольнике острые углы α и 90°-α; sinα=cos(90°-α). На окружности симметрия. ■</div>
-              <div class="drawing-svg"><svg width="200" height="160" viewBox="0 0 200 160"><circle cx="100" cy="80" r="60" stroke="#0f6b7c"/><line x1="100" y1="80" x2="150" y2="40" stroke="#c0392b"/><text x="115" y="55">α</text></svg><div class="fig-caption">Тригонометрическая окружность</div></div>` }
-        ]
-    });
-
-    // ==================== БИЛЕТ 4 ====================
-    tickets.push({
-        title: "Билет №4",
-        parts: [
-            { q: "Перпендикулярные прямые. Теорема о единственности перпендикуляра. Две прямые ⟂ третьей.",
-              a: `<div class="definition-box"><strong>📖 Перпендикулярные прямые</strong> — пересекаются под прямым углом (a⟂b).</div>
-              <div class="theorem-box">Две прямые, перпендикулярные третьей, параллельны.</div>
-              <div class="proof-box">Если a⟂c и b⟂c, но a и b пересекаются в M, то из M опущены два перпендикуляра на c — противоречие. ■</div>
-              <div class="theorem-box">Из точки вне прямой можно опустить единственный перпендикуляр.</div>
-              <div class="drawing-svg"><svg width="220" height="120" viewBox="0 0 220 120"><line x1="20" y1="60" x2="200" y2="60" stroke="#0f6b7c"/><line x1="110" y1="20" x2="110" y2="100" stroke="#f4a261"/><text x="115" y="55">┐</text></svg><div class="fig-caption">Единственный перпендикуляр</div></div>` },
-            { q: "Векторы: равенство, коллинеарные. Сложение, разность, умножение на число. Разложение по двум неколлинеарным.",
-              a: `<div class="definition-box"><strong>📖 Вектор</strong> — направленный отрезок.<br><strong>Равенство</strong> — сонаправлены и равны по длине.<br><strong>Коллинеарные</strong> — лежат на одной прямой или параллельных.</div>
-              <div class="theorem-box">Сложение: правило треугольника, параллелограмма, многоугольника. Разность: a−b = a+(−b). Умножение на число: |λa|=|λ||a|.</div>
-              <div class="theorem-box">Разложение: любой вектор d = x·a + y·b, где a,b неколлинеарны (базис).</div>
-              <div class="drawing-svg"><svg width="260" height="120" viewBox="0 0 260 120"><line x1="30" y1="70" x2="110" y2="30" stroke="#0f6b7c" stroke-width="2"/><line x1="110" y1="30" x2="180" y2="80" stroke="#f4a261" stroke-width="2"/><line x1="30" y1="70" x2="180" y2="80" stroke="#c0392b" stroke-width="2"/></svg><div class="fig-caption">Правило треугольника: a+b</div></div>` }
-        ]
-    });
-
-    // ==================== БИЛЕТ 5 ====================
-    tickets.push({
-        title: "Билет №5",
-        parts: [
-            { q: "Треугольник. Признаки равенства треугольников.",
-              a: `<div class="definition-box"><strong>📖 Треугольник</strong> — три точки (вершины) и три отрезка (стороны).</div>
-              <div class="theorem-box">Признаки: 1) по двум сторонам и углу между ними (СУС); 2) по стороне и двум прилежащим углам (УСУ); 3) по трём сторонам (ССС).</div>
-              <div class="proof-box">Доказываются наложением: при равенстве соответствующих элементов треугольники совпадают. ■</div>
-              <div class="drawing-svg"><svg width="220" height="130" viewBox="0 0 220 130"><polygon points="50,100 110,30 170,100" fill="#e1f0f5" stroke="#0f6b7c"/></svg><div class="fig-caption">Треугольник</div></div>` },
-            { q: "Центральный угол. Градусная мера дуги. Вписанный угол. Теорема о вписанном угле. Следствия.",
-              a: `<div class="definition-box"><strong>📖 Центральный угол</strong> — вершина в центре окружности.<br><strong>Градусная мера дуги</strong> — мера центрального угла.<br><strong>Вписанный угол</strong> — вершина на окружности, стороны пересекают окружность.</div>
-              <div class="theorem-box">Вписанный угол = половине центрального, опирающегося на ту же дугу.</div>
-              <div class="proof-box">Проведём радиусы. Внешний угол равнобедренного треугольника AOC равен сумме двух внутренних ⇒ ∠AOB=2∠ACB. ■</div>
-              <div class="theorem-box">Следствия: вписанные углы на одну дугу равны; угол, опирающийся на диаметр, — прямой.</div>
-              <div class="drawing-svg"><svg width="220" height="150" viewBox="0 0 220 150"><circle cx="110" cy="70" r="55"/><polygon points="110,20 160,100 55,100" fill="#ffe6c7"/></svg><div class="fig-caption">∠ACB = ½∠AOB</div></div>` }
-        ]
-    });
-
-    // ==================== БИЛЕТ 6 ====================
-    tickets.push({
-        title: "Билет №6",
-        parts: [
-            { q: "Медианы, биссектрисы и высоты треугольника. Равнобедренный и равносторонний треугольники.",
-              a: `<div class="definition-box"><strong>📖 Медиана</strong> — отрезок из вершины к середине противоположной стороны.<br><strong>Биссектриса</strong> — отрезок, делящий угол пополам.<br><strong>Высота</strong> — перпендикуляр из вершины к противоположной стороне.<br><strong>Равнобедренный</strong> — две стороны равны.<br><strong>Равносторонний</strong> — все стороны равны.</div>
-              <div class="theorem-box">В равнобедренном треугольнике медиана, биссектриса и высота, проведённые к основанию, совпадают.</div>
-              <div class="proof-box">△ABD и △ACD: AB=AC, ∠BAD=∠CAD, AD — общая ⇒ △ABD=△ACD ⇒ BD=CD, ∠ADB=∠ADC=90°. ■</div>
-              <div class="drawing-svg"><svg width="200" height="130" viewBox="0 0 200 130"><polygon points="100,20 40,100 160,100" fill="#eef4fa"/><line x1="100" y1="20" x2="100" y2="100" stroke="#f4a261"/><text x="105" y="60">медиана</text></svg><div class="fig-caption">Медиана в равнобедренном треугольнике</div></div>` },
-            { q: "Угол между хордой и касательной. Угол между пересекающимися хордами. Угол между секущими.",
-              a: `<div class="definition-box"><strong>📖 Касательная</strong> — прямая, имеющая одну общую точку с окружностью.<br><strong>Секущая</strong> — прямая, пересекающая окружность в двух точках.</div>
-              <div class="theorem-box">Угол между хордой и касательной равен половине дуги, заключённой внутри угла.</div>
-              <div class="proof-box">Проведём радиус в точку касания. Угол между касательной и радиусом =90°. Угол между хордой и радиусом дополняет вписанный угол. ■</div>
-              <div class="theorem-box">Угол между пересекающимися хордами = полусумме дуг, заключённых между ними.<br>Угол между секущими = полуразности дуг.</div>
-              <div class="drawing-svg"><svg width="240" height="150" viewBox="0 0 240 150"><circle cx="120" cy="70" r="50"/><line x1="120" y1="20" x2="160" y2="90" stroke="#c0392b"/><line x1="120" y1="70" x2="190" y2="70" stroke="#0f6b7c"/><text x="125" y="50">α</text></svg><div class="fig-caption">Угол между касательной и хордой</div></div>` }
-        ]
-    });
-
-    // ==================== БИЛЕТ 7 ====================
-    tickets.push({
-        title: "Билет №7",
-        parts: [
-            { q: "Углы, образованные при пересечении двух прямых третьей. Признаки параллельности прямых.",
-              a: `<div class="definition-box"><strong>📖 Накрест лежащие, соответственные, односторонние углы</strong> — образуются при пересечении двух прямых секущей.</div>
-              <div class="theorem-box">Признаки параллельности:<br>1) если накрест лежащие углы равны;<br>2) если соответственные углы равны;<br>3) если сумма односторонних =180°.</div>
-              <div class="proof-box">Доказывается от противного с использованием аксиомы параллельности. ■</div>
-              <div class="drawing-svg"><svg width="200" height="120" viewBox="0 0 200 120"><line x1="20" y1="40" x2="180" y2="40" stroke="#0f6b7c"/><line x1="30" y1="80" x2="190" y2="80" stroke="#0f6b7c"/><line x1="100" y1="20" x2="100" y2="100" stroke="#f4a261"/><text x="105" y="60">накрест лежащие</text></svg><div class="fig-caption">Признаки параллельности</div></div>` },
-            { q: "Теорема косинусов. Следствие. Определение вида треугольника.",
-              a: `<div class="definition-box"><strong>📖 Теорема косинусов</strong> — обобщение теоремы Пифагора для любого треугольника.</div>
-              <div class="theorem-box">c² = a² + b² − 2ab·cosγ</div>
-              <div class="proof-box">Опустим высоту из вершины C на AB. По теореме Пифагора: c² = (b·sinα)² + (a − b·cosα)² = a²+b²−2ab·cosα. ■</div>
-              <div class="theorem-box">Следствие: cosγ = (a²+b²−c²)/(2ab). По знаку cosγ определяем вид треугольника: cosγ>0 — остроугольный, cosγ=0 — прямоугольный, cosγ<0 — тупоугольный.</div>
-              <div class="drawing-svg"><svg width="220" height="120" viewBox="0 0 220 120"><polygon points="30,90 110,30 180,90" fill="#ffe6c7"/><text x="110" y="70">γ</text></svg><div class="fig-caption">Теорема косинусов</div></div>` }
-        ]
-    });
-
-    // ==================== БИЛЕТ 8 ====================
-    tickets.push({
-        title: "Билет №8",
-        parts: [
-            { q: "Теорема о сумме углов треугольника. Внешний угол и его свойство.",
-              a: `<div class="definition-box"><strong>📖 Внешний угол</strong> — угол, смежный с внутренним углом треугольника.</div>
-              <div class="theorem-box">Сумма внутренних углов треугольника = 180°.</div>
-              <div class="proof-box">Через вершину B проведём прямую, параллельную AC. Накрест лежащие углы равны, сумма на прямой =180° ⇒ ∠A+∠B+∠C=180°. ■</div>
-              <div class="theorem-box">Внешний угол равен сумме двух внутренних, не смежных с ним.</div>
-              <div class="proof-box">∠1+∠2+∠3=180°, ∠3+∠4=180° ⇒ ∠4=∠1+∠2. ■</div>
-              <div class="drawing-svg"><svg width="200" height="120" viewBox="0 0 200 120"><polygon points="80,90 150,30 30,30" fill="#e0f0f5"/><text x="100" y="70">A+B+C=180°</text></svg><div class="fig-caption">Сумма углов 180°</div></div>` },
-            { q: "Подобные треугольники. Признаки подобия. Пропорциональные отрезки в прямоугольном треугольнике.",
-              a: `<div class="definition-box"><strong>📖 Подобные треугольники</strong> — углы равны, стороны пропорциональны. Коэффициент подобия k.</div>
-              <div class="theorem-box">Признаки подобия:<br>1) по двум углам;<br>2) по двум сторонам и углу между ними;<br>3) по трём сторонам.</div>
-              <div class="theorem-box">В прямоугольном треугольнике высота, опущенная на гипотенузу, делит его на два треугольника, подобных исходному.</div>
-              <div class="proof-box">△ABC∼△ABH∼△ACH по двум углам (прямой и общий острый). ■</div>
-              <div class="drawing-svg"><svg width="200" height="140" viewBox="0 0 200 140"><polygon points="100,20 40,100 160,100" fill="#cbe4ec"/><text x="100" y="70">∼</text></svg><div class="fig-caption">Подобные треугольники</div></div>` }
-        ]
-    });
-
-    // ==================== БИЛЕТ 9 ====================
-    tickets.push({
-        title: "Билет №9",
-        parts: [
-            { q: "Теорема о соотношениях между сторонами и углами треугольника. Неравенство треугольника.",
-              a: `<div class="definition-box"><strong>📖 В треугольнике</strong> против большей стороны лежит больший угол, и обратно.</div>
-              <div class="proof-box">Если AB>AC, то отложим на AB отрезок AD=AC, тогда ∠ACD=∠ADC, ∠ADC>∠B ⇒ ∠C>∠B. ■</div>
-              <div class="theorem-box">Неравенство треугольника: a + b > c, a + c > b, b + c > a.</div>
-              <div class="proof-box">По аксиоме: расстояние между двумя точками по прямой меньше ломаной. ■</div>
-              <div class="drawing-svg"><svg width="180" height="100" viewBox="0 0 180 100"><polygon points="50,80 90,30 130,80" fill="#e9f0e9"/><text x="88" y="60">a+b>c</text></svg><div class="fig-caption">Неравенство треугольника</div></div>` },
-            { q: "Окружность и круг. Свойство диаметра, перпендикулярного хорде. Длина окружности, площадь круга, сектор, сегмент.",
-              a: `<div class="definition-box"><strong>📖 Окружность</strong> — ГМТ, равноудалённых от центра.<br><strong>Круг</strong> — часть плоскости, ограниченная окружностью.<br><strong>Сектор</strong> — часть круга между двумя радиусами.<br><strong>Сегмент</strong> — часть круга между хордой и дугой.</div>
-              <div class="theorem-box">Диаметр, перпендикулярный хорде, делит её и дугу пополам.</div>
-              <div class="proof-box">Радиусы к концам хорды образуют равнобедренный треугольник, высота из центра — медиана. ■</div>
-              <div class="theorem-box">Длина окружности: C=2πR. Длина дуги: l=πR·α/180°.<br>Площадь круга: S=πR². Площадь сектора: S=½R²α (α в радианах). Площадь сегмента: Sсегм = Sсект − Sтреуг.</div>
-              <div class="drawing-svg"><svg width="200" height="150" viewBox="0 0 200 150"><circle cx="100" cy="70" r="55"/><line x1="100" y1="70" x2="145" y2="40" stroke="#c0392b"/><line x1="100" y1="70" x2="100" y2="15" stroke="#0f6b7c"/></svg><div class="fig-caption">Диаметр ⟂ хорде</div></div>` }
-        ]
-    });
-
-    // ==================== БИЛЕТ 10 ====================
-    tickets.push({
-        title: "Билет №10",
-        parts: [
-            { q: "Прямоугольный треугольник. Свойства. Признаки равенства.",
-              a: `<div class="definition-box"><strong>📖 Прямоугольный треугольник</strong> — имеет прямой угол (90°). Гипотенуза — сторона против прямого угла.</div>
-              <div class="theorem-box">Свойства:<br>1) Сумма острых углов =90°.<br>2) Катет против угла 30° = половине гипотенузы.<br>3) Медиана к гипотенузе = половине гипотенузы.</div>
-              <div class="proof-box">Достроим до прямоугольника, диагонали равны и делятся пополам. ■</div>
-              <div class="theorem-box">Признаки равенства: по гипотенузе и катету, по катету и острому углу.</div>
-              <div class="drawing-svg"><svg width="200" height="120" viewBox="0 0 200 120"><polygon points="30,100 100,20 170,100" fill="#dcf0f5"/><text x="95" y="70">90°</text></svg><div class="fig-caption">Прямоугольный треугольник</div></div>` },
-            { q: "Теорема Менелая. Теорема Чевы.",
-              a: `<div class="definition-box"><strong>📖 Теорема Менелая</strong>: для треугольника и трансверсали, пересекающей стороны (или их продолжения): (AF/FB)·(BD/DC)·(CE/EA)=1.</div>
-              <div class="proof-box">Проведём через вершины прямые, параллельные трансверсали. Используем подобие треугольников, выражаем отношения и перемножаем. ■</div>
-              <div class="theorem-box">Теорема Чевы: для точки внутри треугольника (AF/FB)·(BD/DC)·(CE/EA)=1 (для отрезков, соединяющих вершины с точкой).</div>
-              <div class="drawing-svg"><svg width="240" height="160" viewBox="0 0 240 160"><polygon points="40,120 120,20 200,120" fill="#f6f0e0"/><line x1="100" y1="90" x2="180" y2="40" stroke="#c0392b"/></svg><div class="fig-caption">Теорема Менелая</div></div>` }
-        ]
-    });
-
-    // ==================== БИЛЕТ 11 ====================
-    tickets.push({
-        title: "Билет №11",
-        parts: [
-            { q: "Свойство медианы прямоугольного треугольника. Признак прямоугольного треугольника.",
-              a: `<div class="definition-box"><strong>📖 Медиана</strong> — отрезок из вершины к середине противоположной стороны.</div>
-              <div class="theorem-box">В прямоугольном треугольнике медиана, проведённая к гипотенузе, равна половине гипотенузы.</div>
-              <div class="proof-box">Достроим треугольник до прямоугольника. Диагонали прямоугольника равны и точкой пересечения делятся пополам. Медиана равна половине диагонали. ■</div>
-              <div class="theorem-box">Признак: если медиана треугольника равна половине стороны, к которой она проведена, то треугольник прямоугольный.</div>
-              <div class="drawing-svg"><svg width="200" height="110" viewBox="0 0 200 110"><polygon points="30,90 100,20 170,90" fill="#d9eef5"/><line x1="100" y1="20" x2="100" y2="90" stroke="#f4a261"/></svg><div class="fig-caption">Медиана к гипотенузе</div></div>` },
-            { q: "Серединный перпендикуляр. ГМТ. Центр описанной окружности.",
-              a: `<div class="definition-box"><strong>📖 Серединный перпендикуляр</strong> — прямая, перпендикулярная отрезку и проходящая через его середину.</div>
-              <div class="theorem-box">Серединный перпендикуляр — ГМТ, равноудалённых от концов отрезка.</div>
-              <div class="proof-box">Любая точка на серединном перпендикуляре равноудалена от концов (равенство прямоугольных треугольников). Обратно: если точка равноудалена, то она лежит на серединном перпендикуляре. ■</div>
-              <div class="theorem-box">Центр описанной окружности треугольника — точка пересечения серединных перпендикуляров к сторонам.</div>
-              <div class="drawing-svg"><svg width="200" height="120" viewBox="0 0 200 120"><line x1="40" y1="60" x2="160" y2="60" stroke="#0f6b7c"/><line x1="100" y1="20" x2="100" y2="100" stroke="#f4a261" stroke-dasharray="4"/><circle cx="100" cy="60" r="3" fill="red"/></svg><div class="fig-caption">Серединный перпендикуляр</div></div>` }
-        ]
-    });
-
-    // ==================== БИЛЕТ 12-21 ====================
-    // Для экономии места, но все с рисунками и доказательствами
-    for(let i=12; i<=21; i++) {
-        let title1, title2, def1, def2, theorem1, theorem2, proof1, proof2, svg1, svg2;
-        if(i===12) { title1="Площадь многоугольника. Вывод формул площади четырёхугольника, описанного многоугольника."; title2="Правильный многоугольник. Окружности. Формула внутреннего угла."; def1="Площадь многоугольника аддитивна."; def2="Правильный многоугольник — все стороны и углы равны."; theorem1="S = p·r для описанного многоугольника."; theorem2="Внутренний угол = (n-2)·180°/n."; svg1="<svg width='180' height='100'><polygon points='50,80 90,30 130,80 90,90' fill='#cfe7e5'/></svg>"; svg2="<svg width='180' height='100'><polygon points='90,20 140,50 90,80 40,50' fill='#ffe6c7'/></svg>"; }
-        else if(i===13) { title1="Параллелограмм: свойства и признаки."; title2="Медианы треугольника. Точка пересечения медиан."; def1="Параллелограмм — четырёхугольник с параллельными противоположными сторонами."; def2="Медиана — отрезок из вершины к середине стороны."; theorem1="Противоположные стороны равны, диагонали делятся пополам."; theorem2="Медианы пересекаются в одной точке, делятся в отношении 2:1 от вершины."; svg1="<svg width='180' height='100'><polygon points='30,80 150,80 120,30 0,30' fill='#e1f0f5'/></svg>"; svg2="<svg width='180' height='100'><polygon points='90,20 40,80 140,80' fill='#fff0e0'/><line x1='90' y1='20' x2='90' y2='80' stroke='red'/></svg>"; }
-        else if(i===14) { title1="Средняя линия треугольника и трапеции."; title2="Координаты вектора. Длина, середина отрезка, коллинеарность."; def1="Средняя линия — отрезок, соединяющий середины двух сторон."; def2="Координаты вектора — разность координат конца и начала."; theorem1="Средняя линия треугольника параллельна основанию и равна его половине. Средняя линия трапеции равна полусумме оснований."; theorem2="Длина вектора √(x²+y²). Коллинеарность: x₁/y₁=x₂/y₂."; svg1="<svg width='180' height='100'><polygon points='50,80 90,30 130,80' fill='#e0f0f5'/><line x1='70' y1='55' x2='110' y2='55' stroke='red'/></svg>"; svg2="<svg width='180' height='100'><line x1='30' y1='70' x2='110' y2='30' stroke='#0f6b7c'/><text x='60' y='50'>a</text></svg>"; }
-        else if(i===15) { title1="Прямоугольник: свойства и признаки."; title2="Теорема Фалеса. Пропорциональные отрезки."; def1="Прямоугольник — параллелограмм с прямыми углами."; def2="Теорема Фалеса: параллельные прямые отсекают пропорциональные отрезки."; theorem1="Диагонали прямоугольника равны."; theorem2="Если прямые параллельны, то отрезки на сторонах угла пропорциональны."; svg1="<svg width='180' height='100'><rect x='30' y='30' width='120' height='50' fill='#eef2fa'/></svg>"; svg2="<svg width='180' height='100'><line x1='30' y1='80' x2='150' y2='20' stroke='#0f6b7c'/><line x1='50' y1='65' x2='130' y2='35' stroke='#f4a261'/></svg>"; }
-        else if(i===16) { title1="Ромб: свойства и признаки."; title2="Площадь треугольника: Герона, через r, R. Свойство медианы."; def1="Ромб — параллелограмм с равными сторонами."; def2="Формула Герона: S=√[p(p-a)(p-b)(p-c)]."; theorem1="Диагонали ромба перпендикулярны и делят углы пополам."; theorem2="S=abc/(4R), S=pr. Медиана делит треугольник на два равновеликих."; svg1="<svg width='180' height='100'><polygon points='90,20 140,60 90,100 40,60' fill='#e6f4f0'/></svg>"; svg2="<svg width='180' height='100'><polygon points='50,80 90,30 130,80' fill='#ffe6c7'/></svg>"; }
-        else if(i===17) { title1="Квадрат: свойства и признаки."; title2="Скалярное произведение векторов. Угол между векторами."; def1="Квадрат — прямоугольник с равными сторонами."; def2="a·b = |a||b|cosφ."; theorem1="Диагонали квадрата равны, перпендикулярны и делят углы пополам."; theorem2="Векторы перпендикулярны ⇔ a·b=0."; svg1="<svg width='180' height='100'><rect x='40' y='20' width='60' height='60' fill='#cbe9f0'/></svg>"; svg2="<svg width='180' height='100'><line x1='30' y1='70' x2='110' y2='30' stroke='#0f6b7c'/><line x1='30' y1='70' x2='120' y2='90' stroke='#f4a261'/></svg>"; }
-        else if(i===18) { title1="Теорема Пифагора (прямая и обратная)."; title2="Взаимное расположение прямой и окружности. Касательная."; def1="В прямоугольном треугольнике a²+b²=c²."; def2="Касательная — прямая, имеющая одну общую точку с окружностью."; theorem1="Доказательство через подобие: a²=c·p, b²=c·q, p+q=c ⇒ a²+b²=c²."; theorem2="Касательная ⟂ радиусу. Отрезки касательных из одной точки равны."; svg1="<svg width='180' height='100'><polygon points='30,80 90,20 150,80' fill='#d9eef5'/><text x='85' y='55'>c</text></svg>"; svg2="<svg width='180' height='100'><circle cx='90' cy='50' r='30' fill='none'/><line x1='90' y1='50' x2='140' y2='50' stroke='red'/></svg>"; }
-        else if(i===19) { title1="Биссектриса треугольника. Свойство биссектрисы."; title2="Вписанные и описанные четырёхугольники."; def1="Биссектриса делит угол пополам."; def2="Вписанный четырёхугольник: сумма противоположных углов=180°. Описанный: суммы противоположных сторон равны."; theorem1="BD/DC = AB/AC (биссектриса делит сторону пропорционально прилежащим сторонам)."; theorem2="Признаки вписанного и описанного четырёхугольников."; svg1="<svg width='180' height='100'><polygon points='50,80 90,30 130,80' fill='#f2e6d5'/><line x1='90' y1='30' x2='90' y2='80' stroke='red'/></svg>"; svg2="<svg width='180' height='100'><rect x='30' y='20' width='120' height='60' fill='#eef2fa'/><circle cx='90' cy='50' r='35' fill='none'/></svg>"; }
-        else if(i===20) { title1="Трапеция. Равнобедренная трапеция."; title2="Теорема синусов."; def1="Трапеция — четырёхугольник с одной парой параллельных сторон."; def2="a/sinA = b/sinB = c/sinC = 2R."; theorem1="В равнобедренной трапеции углы при основаниях равны, диагонали равны."; theorem2="Доказательство через описанную окружность: a=2R·sinA."; svg1="<svg width='180' height='100'><polygon points='40,80 80,30 140,30 180,80' fill='#cbe9f0'/></svg>"; svg2="<svg width='180' height='100'><circle cx='90' cy='50' r='40'/><polygon points='90,20 130,70 50,70' fill='#ffe6c7'/></svg>"; }
-        else { title1="Биссектриса угла как ГМТ. Центр вписанной окружности."; title2="Уравнение окружности и прямой."; def1="Биссектриса — ГМТ, равноудалённых от сторон угла."; def2="Окружность: (x-a)²+(y-b)²=R². Прямая: Ax+By+C=0."; theorem1="Центр вписанной окружности — пересечение биссектрис."; theorem2="Уравнения определяют все точки фигуры."; svg1="<svg width='180' height='100'><line x1='40' y1='80' x2='90' y2='20' stroke='#0f6b7c'/><line x1='90' y1='20' x2='140' y2='80' stroke='#0f6b7c'/><circle cx='90' cy='50' r='3' fill='red'/></svg>"; svg2="<svg width='180' height='100'><circle cx='90' cy='50' r='35' fill='none'/><line x1='30' y1='80' x2='150' y2='20' stroke='#f4a261'/></svg>"; }
-        tickets.push({
-            title: `Билет №${i}`,
-            parts: [
-                { q: title1, a: `<div class="definition-box"><strong>📖 ${def1}</strong></div><div class="theorem-box">${theorem1}</div><div class="proof-box">Подробное доказательство: используем свойства фигур и аксиомы геометрии. ■</div><div class="drawing-svg">${svg1}<div class="fig-caption">К билету ${i}, часть 1</div></div>` },
-                { q: title2, a: `<div class="definition-box"><strong>📖 ${def2}</strong></div><div class="theorem-box">${theorem2}</div><div class="proof-box">Доказательство основано на классических геометрических рассуждениях. ■</div><div class="drawing-svg">${svg2}<div class="fig-caption">К билету ${i}, часть 2</div></div>` }
+        // ==================== БИЛЕТ 1 (ПОДРОБНО) ====================
+        ticketsData.push({
+            title: "Билет №1",
+            questions: [
+                { title: "Аксиомы планиметрии. Отрезок. Луч. Угол. Биссектриса угла. Равенство геометрических фигур.",
+                  content: `<div class="definition-box"><strong>📖 АКСИОМЫ ПЛАНИМЕТРИИ (основные положения, не требующие доказательства):</strong><br><br>
+                  <strong>1. Аксиома прямой:</strong> Через любые две точки проходит единственная прямая.<br>
+                  <strong>2. Аксиома отрезка:</strong> На любой прямой от любой точки можно отложить отрезок заданной длины, и притом только один.<br>
+                  <strong>3. Аксиома угла:</strong> Все прямые углы равны между собой.<br>
+                  <strong>4. Аксиома параллельных:</strong> Через точку, не лежащую на данной прямой, проходит единственная прямая, параллельная данной.</div>
+                  <div class="definition-box"><strong>📖 ОПРЕДЕЛЕНИЯ:</strong><br><br>
+                  <strong>Отрезок</strong> — часть прямой, ограниченная двумя точками (концами отрезка). Обозначение: AB.<br>
+                  <strong>Луч</strong> — часть прямой, состоящая из данной точки (начала луча) и всех точек, лежащих по одну сторону от неё. Обозначение: OA (O — начало).<br>
+                  <strong>Угол</strong> — геометрическая фигура, образованная двумя лучами с общим началом (вершиной угла). Обозначение: ∠AOB.<br>
+                  <strong>Биссектриса угла</strong> — луч, выходящий из вершины угла и делящий его на два равных угла.<br>
+                  <strong>Равенство геометрических фигур</strong> — фигуры равны, если одну из них можно совместить с другой наложением (движением).</div>
+                  <div class="drawing"><svg width="450" height="220" viewBox="0 0 450 220"><line x1="70" y1="170" x2="380" y2="170" stroke="#0f6b7c" stroke-width="3"/><line x1="225" y1="170" x2="125" y2="50" stroke="#0f6b7c" stroke-width="3"/><line x1="225" y1="170" x2="325" y2="50" stroke="#0f6b7c" stroke-width="3"/><line x1="225" y1="170" x2="225" y2="90" stroke="#f4a261" stroke-width="4" stroke-dasharray="8,4"/><circle cx="225" cy="170" r="5" fill="#c0392b"/><circle cx="125" cy="50" r="4" fill="#2c7da0"/><circle cx="325" cy="50" r="4" fill="#2c7da0"/><text x="55" y="185" font-size="16">A</text><text x="230" y="190" font-size="16">B (вершина)</text><text x="330" y="40" font-size="16">C</text><text x="110" y="40" font-size="16">D</text></svg><div class="caption">Биссектриса угла BAC (луч AB) делит угол на два равных угла: ∠BAD = ∠DAC</div></div>` },
+                { title: "Теорема о произведении отрезков пересекающихся хорд. Дуги между параллельными хордами. Теоремы о секущих и касательной.",
+                  content: `<div class="definition-box"><strong>📖 ОПРЕДЕЛЕНИЯ:</strong><br>
+                  <strong>Хорда</strong> — отрезок, соединяющий две точки окружности.<br>
+                  <strong>Секущая</strong> — прямая, пересекающая окружность в двух точках.<br>
+                  <strong>Касательная</strong> — прямая, имеющая с окружностью одну общую точку (точку касания).<br>
+                  <strong>Градусная мера дуги</strong> — градусная мера соответствующего центрального угла.</div>
+                  <div class="theorem"><strong>ТЕОРЕМА О ПЕРЕСЕКАЮЩИХСЯ ХОРДАХ:</strong><br>
+                  Если две хорды AB и CD окружности пересекаются в точке E, то произведение отрезков одной хорды равно произведению отрезков другой хорды: AE · EB = CE · ED.</div>
+                  <div class="proof"><strong>Доказательство:</strong><br><br>
+                  1. Рассмотрим треугольники △AED и △CEB.<br>
+                  2. ∠AED = ∠CEB (вертикальные углы).<br>
+                  3. ∠EAD = ∠ECB (вписанные углы, опирающиеся на одну и ту же дугу BD).<br>
+                  4. Следовательно, △AED ∼ △CEB (по двум углам).<br>
+                  5. Из подобия треугольников следует пропорция: AE/CE = ED/EB.<br>
+                  6. По свойству пропорции: AE · EB = CE · ED. ■</div>
+                  <div class="theorem"><strong>ТЕОРЕМА О СЕКУЩЕЙ И КАСАТЕЛЬНОЙ:</strong><br>
+                  Если из точки M, лежащей вне окружности, проведены касательная MC (C — точка касания) и секущая, пересекающая окружность в точках A и B (MA — внешняя часть, MB — вся секущая), то квадрат длины касательной равен произведению всей секущей на её внешнюю часть: MC² = MA · MB.</div>
+                  <div class="proof"><strong>Доказательство:</strong><br><br>
+                  1. Проведём хорду BC.<br>
+                  2. ∠MCB = ∠MBC (угол между касательной и хордой равен углу, опирающемуся на дугу BC).<br>
+                  3. Треугольники △MCB и △MBC имеют общий угол ∠M.<br>
+                  4. Следовательно, △MCB ∼ △MBC (по двум углам).<br>
+                  5. Из подобия: MC/MB = MA/MC ⇒ MC² = MA · MB. ■</div>
+                  <div class="theorem"><strong>ДУГИ МЕЖДУ ПАРАЛЛЕЛЬНЫМИ ХОРДАМИ:</strong><br>
+                  Если две хорды окружности параллельны, то дуги, заключённые между ними, равны.</div>
+                  <div class="drawing"><svg width="320" height="240" viewBox="0 0 320 240"><circle cx="160" cy="110" r="75" fill="none" stroke="#0f6b7c" stroke-width="3"/><line x1="105" y1="55" x2="215" y2="165" stroke="#c0392b" stroke-width="2.5"/><line x1="110" y1="165" x2="210" y2="55" stroke="#2c7da0" stroke-width="2.5"/><circle cx="160" cy="110" r="4" fill="red"/><text x="90" y="45" font-size="14">A</text><text x="220" y="175" font-size="14">B</text><text x="85" y="180" font-size="14">C</text><text x="220" y="45" font-size="14">D</text><text x="165" y="100" font-size="14">E</text></svg><div class="caption">Пересекающиеся хорды: AE·EB = CE·ED</div></div>` }
             ]
         });
-    }
 
-    function renderAll() {
-        const container = document.getElementById('tickets-container');
-        if(!container) return;
-        container.innerHTML = '';
-        tickets.forEach((ticket, idx) => {
-            const card = document.createElement('div');
-            card.className = 'ticket-card';
-            card.id = `ticket-${idx+1}`;
-            let partsHtml = '';
-            ticket.parts.forEach(part => {
-                partsHtml += `<div class="section-block"><div class="section-title">✦ ${part.q}</div><div>${part.a}</div></div>`;
-            });
-            card.innerHTML = `<div class="ticket-title">🎫 ${ticket.title}</div><div class="ticket-body">${partsHtml}</div>`;
-            container.appendChild(card);
+        // ==================== БИЛЕТ 2 ====================
+        ticketsData.push({
+            title: "Билет №2",
+            questions: [
+                { title: "Смежные углы. Определение, свойства. Вертикальные углы. Определение, свойства. Биссектрисы смежных и вертикальных углов.",
+                  content: `<div class="definition-box"><strong>📖 СМЕЖНЫЕ УГЛЫ:</strong><br>
+                  <strong>Определение:</strong> Два угла называются смежными, если у них одна сторона общая, а две другие являются продолжениями одна другой (образуют прямую линию).<br>
+                  <strong>Свойство:</strong> Сумма смежных углов равна 180°.</div>
+                  <div class="proof"><strong>Доказательство свойства смежных углов:</strong><br>
+                  Пусть ∠AOB и ∠BOC — смежные. Лучи OA и OC образуют развёрнутый угол, который равен 180°. Луч OB делит этот развёрнутый угол на два угла, значит, ∠AOB + ∠BOC = 180°. ■</div>
+                  <div class="definition-box"><strong>📖 ВЕРТИКАЛЬНЫЕ УГЛЫ:</strong><br>
+                  <strong>Определение:</strong> Два угла называются вертикальными, если стороны одного угла являются продолжениями сторон другого.<br>
+                  <strong>Свойство:</strong> Вертикальные углы равны.</div>
+                  <div class="proof"><strong>Доказательство свойства вертикальных углов:</strong><br>
+                  Пусть ∠1 и ∠3 — вертикальные. ∠1 и ∠2 — смежные, значит ∠1 + ∠2 = 180°. ∠2 и ∠3 — смежные, значит ∠2 + ∠3 = 180°. Следовательно, ∠1 = 180° - ∠2 и ∠3 = 180° - ∠2, поэтому ∠1 = ∠3. ■</div>
+                  <div class="definition-box"><strong>📖 БИССЕКТРИСЫ СМЕЖНЫХ И ВЕРТИКАЛЬНЫХ УГЛОВ:</strong><br>
+                  • Биссектрисы смежных углов взаимно перпендикулярны (образуют угол 90°).<br>
+                  • Биссектрисы вертикальных углов лежат на одной прямой (являются продолжением друг друга).</div>
+                  <div class="drawing"><svg width="340" height="200" viewBox="0 0 340 200"><line x1="40" y1="100" x2="300" y2="100" stroke="#0f6b7c" stroke-width="3"/><line x1="170" y1="40" x2="170" y2="160" stroke="#f4a261" stroke-width="3"/><circle cx="170" cy="100" r="4" fill="red"/><text x="180" y="90" font-size="18">α</text><text x="150" y="90" font-size="18">β</text><text x="190" y="120" font-size="12">α+β=180°</text><text x="30" y="85" font-size="12">смежные</text></svg><div class="caption">Смежные углы: α + β = 180°; вертикальные углы равны</div></div>` },
+                { title: "Многоугольник. Площадь многоугольника. Свойства. Площади квадрата, прямоугольника, треугольника, параллелограмма, трапеции.",
+                  content: `<div class="definition-box"><strong>📖 МНОГОУГОЛЬНИК:</strong><br>
+                  <strong>Определение:</strong> Многоугольник — это замкнутая ломаная линия без самопересечений вместе с ограниченной ею внутренней областью.<br>
+                  <strong>Площадь многоугольника</strong> — положительная величина, числовое значение которой обладает следующими свойствами:<br>
+                  1) Равные фигуры имеют равные площади.<br>
+                  2) Если фигура составлена из нескольких фигур, то её площадь равна сумме площадей этих фигур (свойство аддитивности).<br>
+                  3) Площадь квадрата со стороной 1 равна 1 (единица измерения).</div>
+                  <div class="theorem"><strong>ФОРМУЛЫ ПЛОЩАДЕЙ:</strong><br><br>
+                  • <strong>Квадрат</strong> со стороной a: S = a²<br>
+                  • <strong>Прямоугольник</strong> со сторонами a и b: S = a·b<br>
+                  • <strong>Треугольник</strong> с основанием a и высотой h: S = ½·a·h<br>
+                  • <strong>Параллелограмм</strong> с основанием a и высотой h: S = a·h<br>
+                  • <strong>Трапеция</strong> с основаниями a, b и высотой h: S = ½·(a + b)·h</div>
+                  <div class="proof"><strong>Вывод формулы площади треугольника:</strong><br>
+                  Достроим треугольник до параллелограмма, проведя через вершины прямые, параллельные сторонам. Площадь параллелограмма равна a·h, а треугольник составляет половину параллелограмма, поэтому S = ½·a·h. ■</div>
+                  <div class="drawing"><svg width="360" height="170" viewBox="0 0 360 170"><polygon points="60,130 140,40 220,40 300,130" fill="#cbe9f0" stroke="#0f6b7c" stroke-width="2.5"/><line x1="140" y1="40" x2="140" y2="130" stroke="#f4a261" stroke-width="2.5" stroke-dasharray="6,3"/><text x="145" y="85" font-size="14">h</text><text x="85" y="145" font-size="14">a</text><text x="260" y="145" font-size="14">b</text></svg><div class="caption">Трапеция: площадь S = ½·(a + b)·h</div></div>` }
+            ]
         });
-    }
-    
-    function buildNav() {
-        const navDiv = document.getElementById('nav-buttons');
-        if(!navDiv) return;
-        for(let i=1;i<=21;i++) {
-            const btn = document.createElement('button');
-            btn.textContent = i;
-            btn.onclick = () => {
-                document.querySelectorAll('.ticket-nav button').forEach(b => b.classList.remove('active'));
-                btn.classList.add('active');
-                document.getElementById(`ticket-${i}`)?.scrollIntoView({ behavior: 'smooth', block: 'start' });
-            };
-            navDiv.appendChild(btn);
+
+        // ==================== БИЛЕТ 3 ====================
+        ticketsData.push({
+            title: "Билет №3",
+            questions: [
+                { title: "Параллельные прямые. Определение. Теорема о двух прямых, параллельных третьей.",
+                  content: `<div class="definition-box"><strong>📖 ПАРАЛЛЕЛЬНЫЕ ПРЯМЫЕ:</strong><br>
+                  <strong>Определение:</strong> Две прямые на плоскости называются параллельными, если они не пересекаются. Обозначение: a ∥ b.</div>
+                  <div class="theorem"><strong>ТЕОРЕМА О ДВУХ ПРЯМЫХ, ПАРАЛЛЕЛЬНЫХ ТРЕТЬЕЙ:</strong><br>
+                  Если две прямые параллельны третьей прямой, то они параллельны между собой.</div>
+                  <div class="proof"><strong>Доказательство:</strong><br><br>
+                  Дано: a ∥ c и b ∥ c.<br>
+                  Предположим противное: пусть прямые a и b не параллельны, то есть пересекаются в некоторой точке M.<br>
+                  Тогда через точку M проходят две различные прямые a и b, каждая из которых параллельна прямой c.<br>
+                  Но это противоречит аксиоме параллельности (через точку, не лежащую на данной прямой, можно провести только одну прямую, параллельную данной).<br>
+                  Следовательно, наше предположение неверно, и a ∥ b. ■</div>
+                  <div class="drawing"><svg width="450" height="170" viewBox="0 0 450 170"><line x1="40" y1="50" x2="410" y2="50" stroke="#2c7da0" stroke-width="3"/><line x1="40" y1="90" x2="410" y2="90" stroke="#2c7da0" stroke-width="3"/><line x1="40" y1="130" x2="410" y2="130" stroke="#f4a261" stroke-width="3"/><text x="20" y="55" font-size="14">a</text><text x="20" y="95" font-size="14">b</text><text x="20" y="135" font-size="14">c</text><text x="150" y="30" font-size="12">a ∥ c</text><text x="150" y="70" font-size="12">b ∥ c</text><text x="150" y="110" font-size="12" fill="#f4a261">⇒ a ∥ b</text></svg><div class="caption">Если две прямые параллельны третьей, то они параллельны между собой</div></div>` },
+                { title: "Синус, косинус, тангенс, котангенс. Тригонометрическая окружность. Основные тождества. Значения углов. Формулы приведения.",
+                  content: `<div class="definition-box"><strong>📖 ТРИГОНОМЕТРИЧЕСКИЕ ФУНКЦИИ В ПРЯМОУГОЛЬНОМ ТРЕУГОЛЬНИКЕ:</strong><br>
+                  • <strong>Синус</strong> острого угла α (sin α) — отношение противолежащего катета к гипотенузе.<br>
+                  • <strong>Косинус</strong> острого угла α (cos α) — отношение прилежащего катета к гипотенузе.<br>
+                  • <strong>Тангенс</strong> острого угла α (tg α) — отношение противолежащего катета к прилежащему (sin α / cos α).<br>
+                  • <strong>Котангенс</strong> острого угла α (ctg α) — отношение прилежащего катета к противолежащему (cos α / sin α).</div>
+                  <div class="definition-box"><strong>📖 ТРИГОНОМЕТРИЧЕСКАЯ ОКРУЖНОСТЬ:</strong><br>
+                  Единичная окружность (радиус = 1) с центром в начале координат. Координаты точки на окружности: (cos α; sin α), где α — угол, отсчитываемый от положительного направления оси Ox.</div>
+                  <div class="theorem"><strong>ОСНОВНЫЕ ТРИГОНОМЕТРИЧЕСКИЕ ТОЖДЕСТВА:</strong><br>
+                  1) sin²α + cos²α = 1<br>
+                  2) tg α = sin α / cos α<br>
+                  3) ctg α = cos α / sin α<br>
+                  4) tg α · ctg α = 1<br>
+                  5) 1 + tg²α = 1/cos²α<br>
+                  6) 1 + ctg²α = 1/sin²α</div>
+                  <div class="theorem"><strong>ЗНАЧЕНИЯ ДЛЯ ОСНОВНЫХ УГЛОВ:</strong><br>
+                  sin 0° = 0, cos 0° = 1, tg 0° = 0<br>
+                  sin 30° = 1/2, cos 30° = √3/2, tg 30° = √3/3<br>
+                  sin 45° = √2/2, cos 45° = √2/2, tg 45° = 1<br>
+                  sin 60° = √3/2, cos 60° = 1/2, tg 60° = √3<br>
+                  sin 90° = 1, cos 90° = 0, tg 90° не определён<br>
+                  sin 120° = √3/2, cos 120° = -1/2, tg 120° = -√3<br>
+                  sin 180° = 0, cos 180° = -1, tg 180° = 0<br>
+                  sin 270° = -1, cos 270° = 0</div>
+                  <div class="theorem"><strong>ФОРМУЛЫ ПРИВЕДЕНИЯ (на примере):</strong><br>
+                  sin(π/2 - α) = cos α</div>
+                  <div class="proof"><strong>Доказательство формулы приведения sin(π/2 - α) = cos α:</strong><br>
+                  Рассмотрим прямоугольный треугольник с острыми углами α и 90°-α. По определению синуса: sin(90°-α) = противолежащий катет / гипотенуза. Но противолежащий катет для угла (90°-α) является прилежащим для угла α, поэтому sin(90°-α) = cos α. На тригонометрической окружности это соответствует симметрии точки относительно биссектрисы первого квадранта. ■</div>
+                  <div class="drawing"><svg width="280" height="230" viewBox="0 0 280 230"><circle cx="140" cy="115" r="80" fill="none" stroke="#0f6b7c" stroke-width="2.5"/><line x1="140" y1="115" x2="220" y2="55" stroke="#c0392b" stroke-width="2"/><line x1="140" y1="115" x2="140" y2="195" stroke="#888" stroke-width="1" stroke-dasharray="4"/><line x1="140" y1="115" x2="210" y2="115" stroke="#888" stroke-width="1" stroke-dasharray="4"/><text x="220" y="50" font-size="14">α</text><text x="225" y="110" font-size="12">cosα</text><text x="145" y="200" font-size="12">sinα</text></svg><div class="caption">Тригонометрическая окружность: sinα — ордината, cosα — абсцисса</div></div>` }
+            ]
+        });
+
+        // ==================== БИЛЕТ 4 ====================
+        ticketsData.push({
+            title: "Билет №4",
+            questions: [
+                { title: "Перпендикулярные прямые. Взаимное расположение двух прямых, перпендикулярных к третьей. Теорема о существовании и единственности перпендикуляра к прямой.",
+                  content: `<div class="definition-box"><strong>📖 ПЕРПЕНДИКУЛЯРНЫЕ ПРЯМЫЕ:</strong><br>
+                  <strong>Определение:</strong> Две прямые называются перпендикулярными, если они пересекаются под прямым углом (90°). Обозначение: a ⟂ b.</div>
+                  <div class="theorem"><strong>ТЕОРЕМА О ДВУХ ПРЯМЫХ, ПЕРПЕНДИКУЛЯРНЫХ ТРЕТЬЕЙ:</strong><br>
+                  Если две прямые перпендикулярны третьей, то они параллельны между собой.</div>
+                  <div class="proof"><strong>Доказательство:</strong><br><br>
+                  Дано: a ⟂ c и b ⟂ c.<br>
+                  Предположим, что прямые a и b не параллельны, то есть пересекаются в некоторой точке M.<br>
+                  Тогда из точки M к прямой c проведены два перпендикуляра (a и b).<br>
+                  Но это противоречит теореме о единственности перпендикуляра: из точки, не лежащей на прямой, можно опустить только один перпендикуляр на эту прямую.<br>
+                  Следовательно, a ∥ b. ■</div>
+                  <div class="theorem"><strong>ТЕОРЕМА О СУЩЕСТВОВАНИИ И ЕДИНСТВЕННОСТИ ПЕРПЕНДИКУЛЯРА:</strong><br>
+                  Из любой точки, не лежащей на данной прямой, можно опустить перпендикуляр на эту прямую, и притом только один.</div>
+                  <div class="proof"><strong>Доказательство:</strong><br><br>
+                  <strong>Существование:</strong> Отложим от точки M, не лежащей на прямой l, отрезок MP, перпендикулярный l. Это можно сделать, построив окружность с центром в M, пересекающую l в двух точках, и проведя серединный перпендикуляр к отрезку, соединяющему эти точки.<br>
+                  <strong>Единственность:</strong> Если бы существовало два перпендикуляра из M к l, то они образовывали бы треугольник с двумя прямыми углами, что невозможно (сумма углов треугольника 180°). ■</div>
+                  <div class="drawing"><svg width="300" height="190" viewBox="0 0 300 190"><line x1="40" y1="95" x2="260" y2="95" stroke="#0f6b7c" stroke-width="3"/><line x1="150" y1="35" x2="150" y2="155" stroke="#f4a261" stroke-width="3"/><circle cx="150" cy="155" r="4" fill="red"/><text x="155" y="145" font-size="14">M</text><text x="155" y="85" font-size="16">┐</text><text x="100" y="70" font-size="12">единственный</text><text x="100" y="100" font-size="12">перпендикуляр</text></svg><div class="caption">Из точки M к прямой можно провести единственный перпендикуляр</div></div>` },
+                { title: "Понятие вектора. Равенство векторов. Коллинеарные векторы. Сложение векторов. Разность векторов. Умножение вектора на число. Разложение вектора по двум неколлинеарным векторам.",
+                  content: `<div class="definition-box"><strong>📖 ОСНОВНЫЕ ПОНЯТИЯ О ВЕКТОРАХ:</strong><br>
+                  <strong>Вектор</strong> — направленный отрезок, имеющий длину (модуль) и направление. Обозначение: \\(\\vec{a}\\) или AB.<br>
+                  <strong>Равенство векторов:</strong> Два вектора равны, если они сонаправлены (имеют одинаковое направление) и их длины равны.<br>
+                  <strong>Коллинеарные векторы:</strong> Векторы называются коллинеарными, если они лежат на одной прямой или на параллельных прямых.<br>
+                  <strong>Противоположный вектор:</strong> Вектор, имеющий ту же длину и противоположное направление. Обозначение: -\\vec{a}.<br>
+                  <strong>Нулевой вектор:</strong> Вектор, у которого начало и конец совпадают. Его длина равна 0, направление не определено.</div>
+                  <div class="theorem"><strong>СЛОЖЕНИЕ ВЕКТОРОВ:</strong><br>
+                  • <strong>Правило треугольника:</strong> Для сложения векторов \\vec{a} и \\vec{b} от конца вектора \\vec{a} откладывают вектор \\vec{b}. Суммой является вектор, соединяющий начало \\vec{a} с концом \\vec{b}.<br>
+                  • <strong>Правило параллелограмма:</strong> Для сложения векторов \\vec{a} и \\vec{b} их откладывают от одной точки и строят параллелограмм. Суммой является диагональ параллелограмма, исходящая из этой точки.<br>
+                  • <strong>Правило многоугольника:</strong> Для сложения нескольких векторов последовательно откладывают их друг за другом; сумма — вектор из начала первого в конец последнего.</div>
+                  <div class="theorem"><strong>РАЗНОСТЬ ВЕКТОРОВ:</strong><br>
+                  Разность векторов \\vec{a} - \\vec{b} = \\vec{a} + (-\\vec{b}), то есть сложение вектора \\vec{a} с вектором, противоположным \\vec{b}.</div>
+                  <div class="theorem"><strong>УМНОЖЕНИЕ ВЕКТОРА НА ЧИСЛО:</strong><br>
+                  Произведением вектора \\vec{a} на число λ (λ ≠ 0) называется вектор \\vec{b} = λ\\vec{a}, который:<br>
+                  • коллинеарен \\vec{a};<br>
+                  • имеет длину |λ|·|\\vec{a}|;<br>
+                  • сонаправлен с \\vec{a}, если λ > 0, и противоположно направлен, если λ < 0.</div>
+                  <div class="theorem"><strong>РАЗЛОЖЕНИЕ ВЕКТОРА ПО ДВУМ НЕКОЛЛИНЕАРНЫМ ВЕКТОРАМ:</strong><br>
+                  Любой вектор \\vec{d} можно единственным образом представить в виде линейной комбинации двух неколлинеарных векторов \\vec{a} и \\vec{b}: \\vec{d} = x\\vec{a} + y\\vec{b}, где x и y — действительные числа (координаты вектора в базисе \\vec{a}, \\vec{b}).</div>
+                  <div class="proof"><strong>Доказательство разложения:</strong><br>
+                  Отложим векторы \\vec{a}, \\vec{b} и \\vec{d} от одной точки O. Через конец вектора \\vec{d} проведём прямые, параллельные векторам \\vec{a} и \\vec{b}. Получим параллелограмм, стороны которого коллинеарны \\vec{a} и \\vec{b}. Следовательно, \\vec{d} = x\\vec{a} + y\\vec{b}. Единственность следует из того, что если бы существовало два разложения, то их разность давала бы нулевой вектор при ненулевых коэффициентах, что невозможно для неколлинеарных векторов. ■</div>
+                  <div class="drawing"><svg width="320" height="160" viewBox="0 0 320 160"><line x1="50" y1="110" x2="140" y2="50" stroke="#0f6b7c" stroke-width="3" marker-end="url(#arrow)"/><line x1="140" y1="50" x2="220" y2="100" stroke="#f4a261" stroke-width="3" marker-end="url(#arrow)"/><line x1="50" y1="110" x2="220" y2="100" stroke="#c0392b" stroke-width="3" marker-end="url(#arrow)"/><text x="85" y="75" font-size="14">a</text><text x="170" y="70" font-size="14">b</text><text x="120" y="115" font-size="14">a+b</text><defs><marker id="arrow" markerWidth="8" markerHeight="8" refX="7" refY="4" orient="auto"><polygon points="0 0, 8 4, 0 8" fill="#333"/></marker></defs></svg><div class="caption">Правило треугольника: сложение векторов a + b</div></div>` }
+            ]
+        });
+
+        // ==================== БИЛЕТ 5 ====================
+        ticketsData.push({
+            title: "Билет №5",
+            questions: [
+                { title: "Треугольник. Признаки равенства треугольников.",
+                  content: `<div class="definition-box"><strong>📖 ТРЕУГОЛЬНИК:</strong><br>
+                  <strong>Определение:</strong> Треугольник — это геометрическая фигура, состоящая из трёх точек (вершин), не лежащих на одной прямой, и трёх отрезков (сторон), их соединяющих.</div>
+                  <div class="theorem"><strong>ПРИЗНАКИ РАВЕНСТВА ТРЕУГОЛЬНИКОВ:</strong><br><br>
+                  <strong>Первый признак (СУС):</strong> Если две стороны и угол между ними одного треугольника соответственно равны двум сторонам и углу между ними другого треугольника, то такие треугольники равны.<br><br>
+                  <strong>Второй признак (УСУ):</strong> Если сторона и два прилежащих к ней угла одного треугольника соответственно равны стороне и двум прилежащим к ней углам другого треугольника, то такие треугольники равны.<br><br>
+                  <strong>Третий признак (ССС):</strong> Если три стороны одного треугольника соответственно равны трём сторонам другого треугольника, то такие треугольники равны.</div>
+                  <div class="proof"><strong>Доказательство первого признака (СУС):</strong><br><br>
+                  Даны треугольники ABC и A₁B₁C₁, в которых AB = A₁B₁, AC = A₁C₁, ∠A = ∠A₁.<br>
+                  Наложим треугольник ABC на треугольник A₁B₁C₁ так, чтобы вершина A совместилась с A₁, а сторона AB пошла по стороне A₁B₁. Поскольку AB = A₁B₁, точка B совместится с B₁. Угол A равен углу A₁, поэтому сторона AC пойдёт по стороне A₁C₁. Так как AC = A₁C₁, точка C совместится с C₁. Следовательно, треугольники полностью совпадут, значит, они равны. ■</div>
+                  <div class="proof"><strong>Доказательство второго признака (УСУ):</strong><br><br>
+                  Даны треугольники ABC и A₁B₁C₁, в которых AB = A₁B₁, ∠A = ∠A₁, ∠B = ∠B₁.<br>
+                  Наложим треугольник ABC на треугольник A₁B₁C₁ так, чтобы вершина A совместилась с A₁, а сторона AB пошла по стороне A₁B₁. Поскольку AB = A₁B₁, точка B совместится с B₁. Угол A равен углу A₁, поэтому сторона AC пойдёт по лучу A₁C₁. Угол B равен углу B₁, поэтому сторона BC пойдёт по лучу B₁C₁. Точка C, будучи пересечением лучей A₁C₁ и B₁C₁, совместится с C₁. Следовательно, треугольники равны. ■</div>
+                  <div class="proof"><strong>Доказательство третьего признака (ССС):</strong><br><br>
+                  Даны треугольники ABC и A₁B₁C₁, в которых AB = A₁B₁, BC = B₁C₁, AC = A₁C₁.<br>
+                  Приложим треугольник ABC к треугольнику A₁B₁C₁ так, чтобы сторона AB совместилась с A₁B₁, а вершины C и C₁ оказались по разные стороны от AB. Проведём отрезок CC₁. Треугольники ACC₁ и BCC₁ равнобедренные, поэтому ∠ACC₁ = ∠AC₁C и ∠BCC₁ = ∠BC₁C. Складывая углы, получаем ∠ACB = ∠AC₁B. Следовательно, треугольники равны по первому признаку. ■</div>
+                  <div class="drawing"><svg width="300" height="180" viewBox="0 0 300 180"><polygon points="80,150 150,40 220,150" fill="#e1f0f5" stroke="#0f6b7c" stroke-width="3"/><circle cx="80" cy="150" r="4" fill="black"/><circle cx="150" cy="40" r="4" fill="black"/><circle cx="220" cy="150" r="4" fill="black"/><text x="70" y="165" font-size="14">A</text><text x="145" y="30" font-size="14">B</text><text x="225" y="165" font-size="14">C</text></svg><div class="caption">Треугольник ABC: три вершины, три стороны</div></div>` },
+                { title: "Центральный угол. Градусная мера дуги. Вписанный угол. Теорема о вписанном угле. Следствия.",
+                  content: `<div class="definition-box"><strong>📖 ОПРЕДЕЛЕНИЯ:</strong><br>
+                  <strong>Центральный угол</strong> — угол с вершиной в центре окружности. Его стороны пересекают окружность в двух точках.<br>
+                  <strong>Градусная мера дуги окружности</strong> — градусная мера соответствующего центрального угла, опирающегося на эту дугу. Обозначение: ∪AB.<br>
+                  <strong>Вписанный угол</strong> — угол, вершина которого лежит на окружности, а стороны пересекают окружность.</div>
+                  <div class="theorem"><strong>ТЕОРЕМА О ВПИСАННОМ УГЛЕ:</strong><br>
+                  Вписанный угол равен половине центрального угла, опирающегося на ту же дугу.</div>
+                  <div class="proof"><strong>Доказательство:</strong><br><br>
+                  Рассмотрим три случая расположения центра окружности относительно вписанного угла.<br><br>
+                  <strong>Случай 1:</strong> Центр O лежит на одной из сторон вписанного угла (например, на стороне AB).<br>
+                  Тогда ∠ABC — вписанный, AO = BO = R (радиусы). Треугольник AOB равнобедренный, значит ∠OAB = ∠OBA. Внешний угол AOC равен сумме двух внутренних: ∠AOC = ∠OAB + ∠OBA = 2∠OBA. Следовательно, ∠OBA = ½∠AOC.<br><br>
+                  <strong>Случай 2:</strong> Центр O лежит внутри вписанного угла. Проводим диаметр BD. Тогда ∠ABD = ½∠AOD, ∠DBC = ½∠DOC. Складывая, получаем ∠ABC = ½∠AOC.<br><br>
+                  <strong>Случай 3:</strong> Центр O лежит вне вписанного угла. Аналогично, вычитая углы, получаем тот же результат. ■</div>
+                  <div class="theorem"><strong>СЛЕДСТВИЯ ИЗ ТЕОРЕМЫ О ВПИСАННОМ УГЛЕ:</strong><br>
+                  1) Вписанные углы, опирающиеся на одну и ту же дугу, равны между собой.<br>
+                  2) Вписанный угол, опирающийся на диаметр (полуокружность), является прямым (равен 90°).</div>
+                  <div class="drawing"><svg width="300" height="220" viewBox="0 0 300 220"><circle cx="150" cy="100" r="70" fill="none" stroke="#0f6b7c" stroke-width="3"/><polygon points="150,30 215,125 85,125" fill="#ffe6c7" stroke="#c0392b" stroke-width="2"/><line x1="150" y1="100" x2="150" y2="30" stroke="#888" stroke-width="1.5" stroke-dasharray="4"/><line x1="150" y1="100" x2="215" y2="125" stroke="#888" stroke-width="1.5" stroke-dasharray="4"/><text x="155" y="40" font-size="12">A</text><text x="225" y="130" font-size="12">B</text><text x="70" y="130" font-size="12">C</text><text x="165" y="95" font-size="10">O</text></svg><div class="caption">Вписанный угол ACB равен половине центрального угла AOB</div></div>` }
+            ]
+        });
+
+        // ==================== БИЛЕТ 6-21 с подробными объяснениями ====================
+        const detailedTickets = [
+            { num:6, 
+              q1:"Медианы, биссектрисы и высоты треугольника. Равнобедренный и равносторонний треугольники: определение, свойства, признаки.",
+              q2:"Угол между хордой и касательной. Угол между пересекающимися хордами. Угол между секущими. Угол между касательной и секущей.",
+              def1:"<strong>Медиана</strong> — отрезок, соединяющий вершину треугольника с серединой противоположной стороны.<br><strong>Биссектриса</strong> — отрезок, делящий угол треугольника пополам.<br><strong>Высота</strong> — перпендикуляр, опущенный из вершины на противоположную сторону.<br><strong>Равнобедренный треугольник</strong> — треугольник, у которого две стороны равны.<br><strong>Равносторонний треугольник</strong> — треугольник, у которого все стороны равны.",
+              th1:"В равнобедренном треугольнике медиана, биссектриса и высота, проведённые к основанию, совпадают. В равностороннем треугольнике все медианы, биссектрисы и высоты равны.",
+              proof1:"△ABD и △ACD: AB=AC (по условию), ∠BAD=∠CAD (AD — биссектриса), AD — общая ⇒ △ABD=△ACD. Следовательно, BD=CD (AD — медиана) и ∠ADB=∠ADC=90° (AD — высота). ■",
+              def2:"<strong>Касательная</strong> — прямая, имеющая с окружностью одну общую точку.<br><strong>Секущая</strong> — прямая, пересекающая окружность в двух точках.",
+              th2:"Угол между хордой и касательной равен половине дуги, заключённой внутри угла. Угол между пересекающимися хордами равен полусумме дуг, заключённых между ними. Угол между секущими равен полуразности дуг.",
+              proof2:"Проведём радиус в точку касания. Угол между касательной и радиусом равен 90°. Угол между хордой и радиусом дополняет вписанный угол, опирающийся на ту же дугу. Следовательно, искомый угол равен половине дуги. ■",
+              svg1:"<polygon points='150,35 70,135 230,135' fill='#eef4fa' stroke='#0f6b7c' stroke-width='3'/><line x1='150' y1='35' x2='150' y2='135' stroke='#f4a261' stroke-width='3'/>",
+              svg2:"<circle cx='150' cy='90' r='55' fill='none' stroke='#0f6b7c' stroke-width='3'/><line x1='150' y1='90' x2='150' y2='35' stroke='#2c7da0' stroke-width='2.5'/><line x1='150' y1='90' x2='205' y2='115' stroke='#c0392b' stroke-width='2.5'/>" },
+            { num:7,
+              q1:"Углы, образованные при пересечении двух прямых третьей. Признаки параллельности прямых. Свойства углов, образованных двумя параллельными и секущей.",
+              q2:"Теорема косинусов. Следствие из теоремы. Определение вида треугольника (по углам).",
+              def1:"При пересечении двух прямых третьей (секущей) образуются: накрест лежащие углы, соответственные углы, односторонние углы.",
+              th1:"Признаки параллельности: 1) если накрест лежащие углы равны; 2) если соответственные углы равны; 3) если сумма односторонних углов равна 180°. Свойства: если прямые параллельны, то накрест лежащие углы равны, соответственные равны, сумма односторонних равна 180°.",
+              proof1:"От противного: если прямые не параллельны, они пересекутся, и нарушится равенство углов. ■",
+              def2:"Теорема косинусов устанавливает связь между сторонами треугольника и косинусом одного из его углов.",
+              th2:"c² = a² + b² − 2ab·cosγ, где γ — угол между сторонами a и b.",
+              proof2:"Опустим высоту из вершины C на сторону AB. По теореме Пифагора: c² = (b·sinα)² + (a − b·cosα)² = a² + b² − 2ab·cosα. ■ Следствие: cosγ = (a²+b²−c²)/(2ab). По знаку cosγ определяем вид треугольника: cosγ>0 — остроугольный, cosγ=0 — прямоугольный, cosγ<0 — тупоугольный.",
+              svg1:"<line x1='40' y1='50' x2='260' y2='50' stroke='#2c7da0' stroke-width='3'/><line x1='40' y1='100' x2='260' y2='100' stroke='#2c7da0' stroke-width='3'/><line x1='150' y1='20' x2='150' y2='130' stroke='#f4a261' stroke-width='3'/>",
+              svg2:"<polygon points='60,130 150,40 240,130' fill='#ffe6c7' stroke='#0f6b7c' stroke-width='3'/><text x='145' y='85' font-size='14'>γ</text>" },
+            { num:8,
+              q1:"Теорема о сумме углов треугольника. Внешний угол и его свойство. Сумма внешних углов треугольника, взятых по одному при каждой вершине.",
+              q2:"Определение подобных треугольников. Признаки подобия треугольников. Пропорциональные отрезки в прямоугольном треугольнике. Отношение площадей подобных треугольников.",
+              def1:"<strong>Внешний угол</strong> треугольника — угол, смежный с внутренним углом треугольника.",
+              th1:"Сумма внутренних углов треугольника равна 180°. Внешний угол равен сумме двух внутренних, не смежных с ним. Сумма внешних углов, взятых по одному при каждой вершине, равна 360°.",
+              proof1:"Через вершину B проводим DE∥AC. ∠ABD=∠BAC, ∠DBC=∠BCA. ∠ABD+∠ABC+∠DBC=180° ⇒ ∠A+∠B+∠C=180°. Внешний угол: ∠4=180°-∠3, ∠1+∠2=180°-∠3 ⇒ ∠4=∠1+∠2. ■",
+              def2:"<strong>Подобные треугольники</strong> — треугольники, у которых углы соответственно равны, а стороны пропорциональны.",
+              th2:"Признаки подобия: 1) по двум углам; 2) по двум сторонам и углу между ними; 3) по трём сторонам. В прямоугольном треугольнике высота, опущенная на гипотенузу, делит его на два треугольника, подобных исходному. Отношение площадей подобных треугольников равно квадрату коэффициента подобия.",
+              proof2:"Из подобия: стороны пропорциональны с коэффициентом k. Площади относятся как (k·a)·(k·h)/2 : (a·h)/2 = k². ■",
+              svg1:"<polygon points='90,160 210,50 330,160' fill='none' stroke='#222' stroke-width='4'/><line x1='210' y1='50' x2='380' y2='50' stroke='#2c7da0' stroke-width='3' stroke-dasharray='8,4'/>",
+              svg2:"<polygon points='150,40 70,130 230,130' fill='#cbe4ec' stroke='#0f6b7c' stroke-width='3'/><line x1='150' y1='40' x2='150' y2='130' stroke='#c0392b'/>" },
+            { num:9,
+              q1:"Теорема о соотношениях между сторонами и углами треугольника. Неравенство треугольника. Следствие.",
+              q2:"Окружность и круг. Свойство диаметра, перпендикулярного хорде. Признаки перпендикулярности диаметра и хорды. Длина окружности. Длина дуги. Площадь круга. Круговой сектор. Площадь кругового сектора. Сегмент. Площадь сегмента.",
+              def1:"В треугольнике против большей стороны лежит больший угол, и обратно.",
+              th1:"Неравенство треугольника: каждая сторона треугольника меньше суммы двух других сторон: a + b > c, a + c > b, b + c > a.",
+              proof1:"По аксиоме: расстояние между двумя точками по прямой меньше длины любой ломаной, соединяющей эти точки. ■",
+              def2:"<strong>Окружность</strong> — ГМТ, равноудалённых от центра.<strong>Круг</strong> — часть плоскости, ограниченная окружностью.<strong>Сектор</strong> — часть круга между двумя радиусами.<strong>Сегмент</strong> — часть круга между хордой и дугой.",
+              th2:"Диаметр, перпендикулярный хорде, делит её и соответствующую дугу пополам. Длина окружности: C=2πR. Длина дуги: l=πRα/180°. Площадь круга: S=πR². Площадь сектора: S=½R²α (α в радианах). Площадь сегмента: Sсегм=Sсект−Sтреуг.",
+              proof2:"Радиусы к концам хорды образуют равнобедренный треугольник. Высота, проведённая из центра, является медианой и биссектрисой. ■",
+              svg1:"<polygon points='90,130 150,45 210,130' fill='#e9f0e9' stroke='#0f6b7c' stroke-width='3'/><text x='145' y='90' font-size='12'>a+b>c</text>",
+              svg2:"<circle cx='150' cy='80' r='60' fill='none' stroke='#0f6b7c' stroke-width='3'/><line x1='150' y1='80' x2='150' y2='20' stroke='#c0392b' stroke-width='2.5'/>" },
+            { num:10,
+              q1:"Прямоугольный треугольник. Свойства прямоугольных треугольников. Признаки равенства прямоугольных треугольников.",
+              q2:"Теорема Менелая (с доказательством). Теоремы Чевы (без доказательства).",
+              def1:"<strong>Прямоугольный треугольник</strong> — треугольник, имеющий прямой угол (90°). Гипотенуза — сторона, лежащая против прямого угла.",
+              th1:"Свойства: 1) сумма острых углов = 90°; 2) катет, лежащий против угла 30°, равен половине гипотенузы; 3) медиана, проведённая к гипотенузе, равна половине гипотенузы. Признаки равенства: по двум катетам; по катету и прилежащему острому углу; по гипотенузе и острому углу; по гипотенузе и катету.",
+              proof1:"Достроим до прямоугольника. Диагонали прямоугольника равны и делятся пополам. ■",
+              def2:"Теорема Менелая связывает отношения отрезков на сторонах треугольника и секущей.",
+              th2:"Для треугольника ABC и прямой, пересекающей стороны AB, BC и CA (или их продолжения) в точках F, D, E соответственно: (AF/FB)·(BD/DC)·(CE/EA) = 1.",
+              proof2:"Проведём через вершины прямые, параллельные трансверсали. Используя подобие треугольников, выражаем каждое отношение и перемножаем. Все промежуточные величины сокращаются, давая 1. ■",
+              svg1:"<polygon points='70,140 150,40 230,140' fill='#dcf0f5' stroke='#0f6b7c' stroke-width='3'/><rect x='70' y='120' width='25' height='25' fill='none' stroke='#c0392b'/>",
+              svg2:"<polygon points='80,150 150,40 220,150' fill='#f6f0e0' stroke='#0f6b7c' stroke-width='3'/><line x1='115' y1='110' x2='185' y2='60' stroke='#c0392b' stroke-width='2'/>" }
+        ];
+
+        // Добавляем билеты 6-10
+        for(let i=0; i<detailedTickets.length; i++) {
+            const t = detailedTickets[i];
+            ticketsData.push({
+                title: `Билет №${t.num}`,
+                questions: [
+                    { title: t.q1, content: `<div class="definition-box"><strong>📖 ОПРЕДЕЛЕНИЯ:</strong><br>${t.def1}</div><div class="theorem"><strong>ТЕОРЕМА:</strong><br>${t.th1}</div><div class="proof">${t.proof1}</div><div class="drawing"><svg width="300" height="180" viewBox="0 0 300 180">${t.svg1}</svg><div class="caption">К билету №${t.num}, часть 1</div></div>` },
+                    { title: t.q2, content: `<div class="definition-box"><strong>📖 ОПРЕДЕЛЕНИЯ:</strong><br>${t.def2}</div><div class="theorem"><strong>ТЕОРЕМА:</strong><br>${t.th2}</div><div class="proof">${t.proof2}</div><div class="drawing"><svg width="300" height="180" viewBox="0 0 300 180">${t.svg2}</svg><div class="caption">К билету №${t.num}, часть 2</div></div>` }
+                ]
+            });
         }
-        if(navDiv.firstChild) navDiv.firstChild.classList.add('active');
-    }
-    
-    renderAll();
-    buildNav();
-</script>
+
+        // ==================== БИЛЕТ 11-21 ====================
+        for(let num=11; num<=21; num++) {
+            let q1, q2, def1, th1, proof1, def2, th2, proof2, svg1, svg2;
+            if(num===11) {
+                q1="Свойство медианы прямоугольного треугольника. Признак прямоугольного треугольника.";
+                q2="Серединный перпендикуляр к отрезку. Серединный перпендикуляр как геометрическое место точек. Центр описанной около треугольника окружности.";
+                def1="<strong>Медиана</strong> — отрезок, соединяющий вершину треугольника с серединой противоположной стороны.";
+                th1="Медиана, проведённая к гипотенузе прямоугольного треугольника, равна половине гипотенузы. Если медиана треугольника равна половине стороны, к которой она проведена, то треугольник прямоугольный.";
+                proof1="Достроим треугольник до прямоугольника. Диагонали прямоугольника равны и точкой пересечения делятся пополам. Медиана равна половине диагонали, а диагональ равна гипотенузе. ■";
+                def2="<strong>Серединный перпендикуляр</strong> — прямая, перпендикулярная отрезку и проходящая через его середину.";
+                th2="Серединный перпендикуляр — геометрическое место точек, равноудалённых от концов отрезка. Центр описанной окружности треугольника — точка пересечения серединных перпендикуляров к его сторонам.";
+                proof2="Любая точка на серединном перпендикуляре равноудалена от концов отрезка (равенство прямоугольных треугольников). Обратно: если точка равноудалена от концов, то она лежит на серединном перпендикуляре. ■";
+                svg1="<polygon points='70,140 150,40 230,140' fill='#d9eef5' stroke='#0f6b7c' stroke-width='3'/><line x1='150' y1='40' x2='150' y2='140' stroke='#f4a261' stroke-width='3'/>";
+                svg2="<line x1='50' y1='90' x2='250' y2='90' stroke='#0f6b7c' stroke-width='3'/><line x1='150' y1='40' x2='150' y2='140' stroke='#f4a261' stroke-width='3' stroke-dasharray='8,4'/><circle cx='150' cy='90' r='4' fill='red'/>";
+            }
+            else if(num===12) {
+                q1="Площадь многоугольника. Свойства. Вывод формул площади произвольного четырехугольника, площади описанного многоугольника.";
+                q2="Правильный многоугольник. Окружность, описанная около правильного многоугольника, её центр и радиус. Окружность, вписанная в правильный многоугольник, её центр и радиус. Формула для вычисления градусной меры внутреннего угла правильного многоугольника.";
+                def1="<strong>Площадь многоугольника</strong> — аддитивная величина, равные фигуры имеют равные площади.";
+                th1="Для описанного многоугольника: S = p·r, где p — полупериметр, r — радиус вписанной окружности.";
+                proof1="Разобьём описанный многоугольник на треугольники с вершиной в центре вписанной окружности. Площадь каждого треугольника равна ½·сторона·r. Суммируя, получаем S = ½·P·r = p·r. ■";
+                def2="<strong>Правильный многоугольник</strong> — многоугольник, у которого все стороны и все углы равны.";
+                th2="Внутренний угол правильного n-угольника: α = (n-2)·180°/n. Центр правильного многоугольника является центром вписанной и описанной окружностей.";
+                proof2="Сумма углов n-угольника = (n-2)·180°. Так как все углы равны, каждый угол = (n-2)·180°/n. ■";
+                svg1="<polygon points='110,110 150,60 190,110 150,140' fill='#cfe7e5' stroke='#0f6b7c' stroke-width='3'/><circle cx='150' cy='95' r='35' fill='none' stroke='#f4a261'/>";
+                svg2="<polygon points='150,40 190,80 150,120 110,80' fill='#ffe6c7' stroke='#0f6b7c' stroke-width='3'/><circle cx='150' cy='80' r='50' fill='none' stroke='#2c7da0'/>";
+            }
+            else if(num===13) {
+                q1="Параллелограмм. Определение. Свойства и признаки параллелограмма.";
+                q2="Медианы треугольника. Точка пересечения медиан треугольника.";
+                def1="<strong>Параллелограмм</strong> — четырёхугольник, у которого противоположные стороны параллельны.";
+                th1="Свойства: противоположные стороны равны; противоположные углы равны; диагонали точкой пересечения делятся пополам. Признаки: если в четырёхугольнике противоположные стороны попарно равны или параллельны, или диагонали делятся пополам, то это параллелограмм.";
+                proof1="△ABC и △CDA: ∠BAC=∠DCA (накрест лежащие), ∠BCA=∠DAC, AC — общая ⇒ △ABC=△CDA ⇒ AB=CD, BC=AD. Диагонали: △AOB=△COD по стороне и углам ⇒ AO=OC, BO=OD. ■";
+                def2="<strong>Медиана</strong> — отрезок, соединяющий вершину с серединой противоположной стороны.";
+                th2="Медианы треугольника пересекаются в одной точке (центроид), которая делит каждую медиану в отношении 2:1, считая от вершины.";
+                proof2="Рассмотрим медианы AA₁ и BB₁. Они пересекаются в точке O. Через теорему о средней линии или векторы: O = (A+B+C)/3. ■";
+                svg1="<polygon points='60,120 200,120 160,40 20,40' fill='#e1f0f5' stroke='#0f6b7c' stroke-width='3'/><line x1='110' y1='40' x2='110' y2='120' stroke='#f4a261' stroke-dasharray='4'/>";
+                svg2="<polygon points='150,40 70,140 230,140' fill='#fff0e0' stroke='#0f6b7c' stroke-width='3'/><line x1='150' y1='40' x2='150' y2='140' stroke='#c0392b'/><circle cx='150' cy='107' r='4' fill='red'/>";
+            }
+            else if(num===14) {
+                q1="Средняя линия треугольника (определение и свойства). Средняя линия трапеции (определение и свойства).";
+                q2="Координаты вектора. Координаты середины отрезка. Вычисление длины вектора по его координатам. Свойство и признак коллинеарных векторов.";
+                def1="<strong>Средняя линия треугольника</strong> — отрезок, соединяющий середины двух сторон.<br><strong>Средняя линия трапеции</strong> — отрезок, соединяющий середины боковых сторон.";
+                th1="Средняя линия треугольника параллельна третьей стороне и равна её половине. Средняя линия трапеции параллельна основаниям и равна полусумме оснований.";
+                proof1="Через подобие треугольников: △CMN ∼ △CAB с коэффициентом 1/2. Для трапеции: через диагональ и среднюю линию треугольника. ■";
+                def2="<strong>Координаты вектора</strong> — разность координат конца и начала: AB = (x₂-x₁; y₂-y₁).";
+                th2="Длина вектора: |a| = √(x²+y²). Координаты середины: ((x₁+x₂)/2; (y₁+y₂)/2). Коллинеарные векторы: x₁/y₁ = x₂/y₂ (при y₁,y₂≠0) или x₁·y₂ = x₂·y₁.";
+                proof2="Длина по теореме Пифагора. Коллинеарность означает, что один вектор является произведением другого на число. ■";
+                svg1="<polygon points='80,130 150,45 220,130' fill='#e0f0f5' stroke='#0f6b7c' stroke-width='3'/><line x1='115' y1='87' x2='185' y2='87' stroke='#c0392b' stroke-width='2.5'/>";
+                svg2="<line x1='50' y1='100' x2='140' y2='45' stroke='#0f6b7c' stroke-width='3'/><line x1='140' y1='45' x2='220' y2='90' stroke='#f4a261' stroke-width='3'/>";
+            }
+            else if(num===15) {
+                q1="Прямоугольник, его свойства и признаки.";
+                q2="Теорема Фалеса (прямая и обратная). Теорема о пропорциональных отрезках.";
+                def1="<strong>Прямоугольник</strong> — параллелограмм, у которого все углы прямые.";
+                th1="Свойства: диагонали прямоугольника равны. Признаки: если в параллелограмме один угол прямой, то это прямоугольник; если диагонали параллелограмма равны, то это прямоугольник.";
+                proof1="Диагонали разбивают прямоугольник на равные треугольники. ■";
+                def2="<strong>Теорема Фалеса</strong>: если параллельные прямые отсекают на одной стороне угла равные отрезки, то и на другой стороне они отсекают равные отрезки.";
+                th2="Если прямые, пересекающие стороны угла, параллельны, то отрезки на сторонах угла пропорциональны.";
+                proof2="Через подобие треугольников, образованных параллельными прямыми. ■";
+                svg1="<rect x='60' y='50' width='180' height='80' fill='#eef2fa' stroke='#0f6b7c' stroke-width='3'/><line x1='60' y1='90' x2='240' y2='90' stroke='#f4a261' stroke-dasharray='4'/>";
+                svg2="<line x1='40' y1='120' x2='260' y2='30' stroke='#0f6b7c' stroke-width='3'/><line x1='70' y1='100' x2='220' y2='50' stroke='#f4a261' stroke-width='2'/><line x1='100' y1='80' x2='180' y2='70' stroke='#f4a261' stroke-width='2'/>";
+            }
+else if(num===16) {
+    q1="Ромб, его свойства и признаки.";
+    q2="Площадь многоугольника. Свойства. Вывод формул площади произвольного четырехугольника, площади описанного многоугольника.";
+    def1="<strong>Ромб</strong> — параллелограмм, у которого все стороны равны. Ромб обладает всеми свойствами параллелограмма, а также: диагонали ромба взаимно перпендикулярны и являются биссектрисами его углов.";
+    th1="Свойства ромба: 1) все стороны равны; 2) диагонали перпендикулярны; 3) диагонали делят углы пополам; 4) диагонали точкой пересечения делятся пополам. Признаки: если в параллелограмме диагонали перпендикулярны или диагонали являются биссектрисами углов, то это ромб.";
+    proof1="Рассмотрим ромб ABCD с диагоналями AC и BD, пересекающимися в точке O. Треугольники AOB, BOC, COD, DOA равны по трём сторонам (все стороны ромба равны, диагонали делятся пополам). Следовательно, ∠AOB = ∠BOC = 90°, так как сумма углов вокруг точки O равна 360°, а все углы равны. Диагонали перпендикулярны. Кроме того, ∠ABO = ∠OBC, значит, диагональ BD — биссектриса угла B. Аналогично для других углов. ■";
+    def2="<strong>Площадь многоугольника</strong> — положительная величина, обладающая свойствами: 1) равные фигуры имеют равные площади; 2) если фигура составлена из нескольких фигур, то её площадь равна сумме площадей этих фигур (аддитивность); 3) площадь квадрата со стороной 1 равна 1 (единица измерения).";
+    th2="1) Площадь произвольного четырёхугольника можно найти разбиением на два треугольника: S = S₁ + S₂.<br>2) Площадь описанного многоугольника (многоугольника, в который можно вписать окружность) вычисляется по формуле: S = p·r, где p — полупериметр многоугольника, r — радиус вписанной окружности.";
+    proof2="1) Любой четырёхугольник диагональю разбивается на два треугольника. По свойству аддитивности площади, площадь четырёхугольника равна сумме площадей этих треугольников: S = ½·d₁·h₁ + ½·d₁·h₂ = ½·d₁·(h₁+h₂).<br><br>2) Для описанного многоугольника проведём отрезки из центра вписанной окружности ко всем вершинам. Многоугольник разбивается на n треугольников, каждый из которых имеет основанием сторону многоугольника, а высотой — радиус вписанной окружности r. Площадь каждого треугольника равна ½·aᵢ·r. Суммируя по всем сторонам, получаем S = ½·(a₁ + a₂ + ... + aₙ)·r = p·r, где p = (a₁ + a₂ + ... + aₙ)/2 — полупериметр. ■";
+    svg1="<polygon points='150,40 200,80 150,120 100,80' fill='#e6f4f0' stroke='#0f6b7c' stroke-width='3'/><line x1='100' y1='80' x2='200' y2='80' stroke='#c0392b' stroke-dasharray='4'/><line x1='150' y1='40' x2='150' y2='120' stroke='#c0392b' stroke-dasharray='4'/><text x='125' y='75' font-size='12'>O</text><text x='155' y='35' font-size='12'>A</text><text x='205' y='85' font-size='12'>B</text><text x='155' y='125' font-size='12'>C</text><text x='95' y='85' font-size='12'>D</text>";
+    svg2="<polygon points='80,110 150,50 220,110 180,130 100,130' fill='#cfe7e5' stroke='#0f6b7c' stroke-width='3'/><circle cx='150' cy='90' r='38' fill='none' stroke='#f4a261' stroke-width='2'/><line x1='150' y1='90' x2='150' y2='50' stroke='#f4a261' stroke-dasharray='4'/><text x='155' y='70' font-size='11'>r</text><text x='85' y='125' font-size='12'>a₁</text><text x='210' y='125' font-size='12'>a₂</text>";
+}
+            else if(num===17) {
+                q1="Квадрат, его свойства и признаки.";
+                q2="Угол между векторами. Скалярное произведение векторов. Скалярное произведение векторов в координатной форме. Нахождение угла между векторами. Перпендикулярность векторов (определение, свойство и признак).";
+                def1="<strong>Квадрат</strong> — прямоугольник, у которого все стороны равны.";
+                th1="Свойства: все стороны равны, все углы прямые, диагонали равны, перпендикулярны и делят углы пополам.";
+                proof1="Квадрат является одновременно ромбом и прямоугольником, поэтому обладает их свойствами. ■";
+                def2="<strong>Скалярное произведение</strong> векторов: a·b = |a||b|·cosφ, где φ — угол между векторами.";
+                th2="В координатах: a·b = x₁x₂ + y₁y₂. Векторы перпендикулярны ⇔ a·b = 0.";
+                proof2="По теореме косинусов из треугольника, построенного на векторах. ■";
+                svg1="<rect x='70' y='40' width='100' height='100' fill='#cbe9f0' stroke='#0f6b7c' stroke-width='3'/><line x1='70' y1='90' x2='170' y2='90' stroke='#f4a261'/>";
+                svg2="<line x1='50' y1='100' x2='140' y2='45' stroke='#0f6b7c' stroke-width='3'/><line x1='50' y1='100' x2='150' y2='120' stroke='#f4a261' stroke-width='3'/>";
+            }
+            else if(num===18) {
+                q1="Теорема Пифагора (прямая и обратная).";
+                q2="Взаимное расположение прямой и окружности. Свойство касательной к окружности. Признак касательной. Свойство отрезков касательных. Касание двух окружностей.";
+                def1="<strong>Теорема Пифагора</strong>: в прямоугольном треугольнике квадрат гипотенузы равен сумме квадратов катетов.";
+                th1="a² + b² = c². Обратная: если в треугольнике квадрат одной стороны равен сумме квадратов двух других, то треугольник прямоугольный.";
+                proof1="Опустим высоту на гипотенузу. Из подобия: a² = c·p, b² = c·q, p+q=c ⇒ a²+b²=c². ■";
+                def2="<strong>Касательная</strong> — прямая, имеющая с окружностью одну общую точку.";
+                th2="Касательная перпендикулярна радиусу, проведённому в точку касания. Отрезки касательных из одной точки равны. Окружности касаются, если расстояние между центрами равно сумме или разности радиусов.";
+                proof2="Радиус к точке касания — кратчайшее расстояние от центра до прямой, поэтому перпендикулярен. ■";
+                svg1="<polygon points='60,130 150,35 240,130' fill='#d9eef5' stroke='#0f6b7c' stroke-width='3'/><text x='85' y='145' font-size='12'>a</text><text x='245' y='145' font-size='12'>b</text><text x='145' y='70' font-size='12'>c</text>";
+                svg2="<circle cx='150' cy='80' r='55' fill='none' stroke='#0f6b7c' stroke-width='3'/><line x1='150' y1='80' x2='230' y2='80' stroke='#c0392b' stroke-width='3'/>";
+            }
+            else if(num===19) {
+                q1="Биссектриса треугольника. Свойство биссектрисы треугольника. Отношение площадей треугольников с равным углом.";
+                q2="Вписанные и описанные четырехугольники. Свойства, признаки.";
+                def1="<strong>Биссектриса треугольника</strong> — отрезок биссектрисы угла от вершины до противоположной стороны.";
+                th1="Биссектриса внутреннего угла треугольника делит противоположную сторону на отрезки, пропорциональные прилежащим сторонам: BD/DC = AB/AC.";
+                proof1="Площади треугольников ABD и ADC относятся как BD:DC, но также равны (AB·AD·sin∠BAD/2) : (AC·AD·sin∠CAD/2) = AB:AC, так как sin равны. ■";
+                def2="<strong>Вписанный четырёхугольник</strong> — четырёхугольник, все вершины которого лежат на окружности.<br><strong>Описанный четырёхугольник</strong> — четырёхугольник, все стороны которого касаются окружности.";
+                th2="Во вписанном четырёхугольнике сумма противоположных углов равна 180°. В описанном четырёхугольнике суммы противоположных сторон равны.";
+                proof2="Вписанный: углы опираются на дуги. Описанный: касательные из вершин дают равенство отрезков. ■";
+                svg1="<polygon points='80,130 150,40 220,130' fill='#f2e6d5' stroke='#0f6b7c' stroke-width='3'/><line x1='150' y1='40' x2='130' y2='130' stroke='#c0392b' stroke-width='3'/>";
+                svg2="<rect x='40' y='40' width='200' height='100' fill='#eef2fa' stroke='#0f6b7c' stroke-width='3'/><circle cx='140' cy='90' r='70' fill='none' stroke='#f4a261'/>";
+            }
+            else if(num===20) {
+                q1="Трапеция. Равнобедренная трапеция её свойства и признаки. Прямоугольная трапеция.";
+                q2="Теорема синусов.";
+                def1="<strong>Трапеция</strong> — четырёхугольник, у которого две стороны параллельны (основания).<br><strong>Равнобедренная трапеция</strong> — трапеция с равными боковыми сторонами.<br><strong>Прямоугольная трапеция</strong> — трапеция с одним прямым углом.";
+                th1="В равнобедренной трапеции углы при основаниях равны, диагонали равны.";
+                proof1="△ABD=△DCA по двум сторонам и углу. ■";
+                def2="<strong>Теорема синусов</strong>: стороны треугольника пропорциональны синусам противолежащих углов.";
+                th2="a/sinA = b/sinB = c/sinC = 2R, где R — радиус описанной окружности.";
+                proof2="Проведём диаметр через вершину. Вписанный угол, опирающийся на диаметр, прямой. a = 2R·sinA. ■";
+                svg1="<polygon points='60,120 120,50 220,50 280,120' fill='#cbe9f0' stroke='#0f6b7c' stroke-width='3'/><line x1='120' y1='50' x2='120' y2='120' stroke='#f4a261' stroke-dasharray='4'/>";
+                svg2="<circle cx='150' cy='90' r='65' fill='none' stroke='#0f6b7c' stroke-width='3'/><polygon points='150,25 215,120 85,120' fill='#ffe6c7' stroke='#c0392b' stroke-width='2'/>";
+            }
+            else {
+                q1="Биссектриса угла. Биссектриса угла как геометрическое место точек. Центр вписанной в треугольник окружности.";
+                q2="Уравнение окружности. Уравнение прямой.";
+                def1="<strong>Биссектриса угла</strong> — луч, делящий угол на два равных угла.";
+                th1="Биссектриса угла — геометрическое место точек, равноудалённых от сторон угла. Центр вписанной окружности треугольника — точка пересечения биссектрис его углов.";
+                proof1="Если точка на биссектрисе, то расстояния до сторон равны (равенство прямоугольных треугольников). Обратное также верно. ■";
+                def2="<strong>Уравнение окружности</strong>: (x - a)² + (y - b)² = R², где (a;b) — центр, R — радиус.<br><strong>Уравнение прямой</strong>: Ax + By + C = 0 или y = kx + b.";
+                th2="Каждая точка окружности удовлетворяет её уравнению. Любая прямая задаётся линейным уравнением.";
+                proof2="По определению окружности: расстояние от точки до центра равно R. По формуле расстояния между точками. ■";
+                svg1="<line x1='50' y1='120' x2='150' y2='35' stroke='#0f6b7c' stroke-width='3'/><line x1='150' y1='35' x2='250' y2='120' stroke='#0f6b7c' stroke-width='3'/><circle cx='150' cy='75' r='4' fill='red'/>";
+                svg2="<circle cx='150' cy='80' r='55' fill='none' stroke='#0f6b7c' stroke-width='3'/><line x1='40' y1='120' x2='260' y2='40' stroke='#f4a261' stroke-width='3'/>";
+            }
+            ticketsData.push({
+                title: `Билет №${num}`,
+                questions: [
+                    { title: q1, content: `<div class="definition-box"><strong>📖 ОПРЕДЕЛЕНИЯ:</strong><br>${def1}</div><div class="theorem"><strong>ТЕОРЕМА:</strong><br>${th1}</div><div class="proof">${proof1}</div><div class="drawing"><svg width="300" height="180" viewBox="0 0 300 180">${svg1}</svg><div class="caption">К билету №${num}, часть 1</div></div>` },
+                    { title: q2, content: `<div class="definition-box"><strong>📖 ОПРЕДЕЛЕНИЯ:</strong><br>${def2}</div><div class="theorem"><strong>ТЕОРЕМА:</strong><br>${th2}</div><div class="proof">${proof2}</div><div class="drawing"><svg width="300" height="180" viewBox="0 0 300 180">${svg2}</svg><div class="caption">К билету №${num}, часть 2</div></div>` }
+                ]
+            });
+        }
+
+        // Рендеринг всех билетов
+        function renderAll() {
+            const container = document.getElementById('tickets-container');
+            container.innerHTML = '';
+            ticketsData.forEach((ticket, idx) => {
+                const ticketDiv = document.createElement('div');
+                ticketDiv.className = 'ticket';
+                ticketDiv.id = `bilet-${idx+1}`;
+                let questionsHtml = '';
+                ticket.questions.forEach(q => {
+                    questionsHtml += `
+                        <div class="question-block">
+                            <div class="question-title">✦ ${q.title}</div>
+                            ${q.content}
+                        </div>
+                    `;
+                });
+                ticketDiv.innerHTML = `
+                    <div class="ticket-header">${ticket.title}</div>
+                    <div class="ticket-body">
+                        ${questionsHtml}
+                    </div>
+                `;
+                container.appendChild(ticketDiv);
+            });
+        }
+
+        function buildNav() {
+            const navDiv = document.getElementById('nav');
+            for(let i=1; i<=21; i++) {
+                const btn = document.createElement('button');
+                btn.textContent = i;
+                btn.onclick = () => {
+                    document.querySelectorAll('.nav button').forEach(b => b.classList.remove('active'));
+                    btn.classList.add('active');
+                    document.getElementById(`bilet-${i}`)?.scrollIntoView({ behavior: 'smooth', block: 'start' });
+                };
+                navDiv.appendChild(btn);
+            }
+            if(navDiv.firstChild) navDiv.firstChild.classList.add('active');
+        }
+
+        renderAll();
+        buildNav();
+    </script>
 </body>
 </html>
